@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appnames>
+  <music>com.tencent.qqmusic,com.netease.cloudmusic,com.kugou.android,fm.xiami.main,cn.kuwo.player,
+    com.android.app.migu,com.ting.mp3.android,com.spotify.music,com.apple.android.music,com.amazon.mp3,
+    com.google.android.apps.youtube.music,com.pandora.android,deezer.android.app,com.soundcloud.android,
+    com.aspiro.tidal,com.jio.media.jiobeats,com.gaana,com.bsbportal.music,com.clearchannel.iheartradio.controller,
+    com.shazam.android,com.tencent.ibg.joox,ru.yandex.music,com.anghami,com.iloen.melon,com.skysoft.kkbox.android</music>
+
+  <video>com.tencent.qqlive,com.qiyi.video,com.qiyi.video.pad,com.youku.phone,tv.danmaku.bili,com.hunantv.imgo.activity,
+    com.sohu.sohuvideo,com.letv.android.client,com.pplive.androidphone,com.google.android.youtube,com.netflix.mediaclient,
+    com.amazon.avod.thirdpartyclient,com.disney.disneyplus,com.hulu.plus,tv.twitch.android.app,com.vimeo.android.videoapp,
+    com.dailymotion.dailymotion,com.viki.android,in.startv.hotstar,com.mxtech.videoplayer.ad,com.viu.phone,
+    com.sonyliv,com.graymatrix.did,com.tv.v18.viola,com.hbo.hbonow,com.zui.filemanager,com.zui.gallery</video>
+</appnames>

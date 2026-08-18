@@ -1,0 +1,5 @@
+# Lenovo, add for TABZUI-526 by cuigq1
+#Create /data/vendor/diag_logs folder for on-device-logging
+on post-fs-data
+    mkdir /data/vendor/diag_mdlog 0777 system system
+    mkdir /data/vendor/diag_mdlog/chgpd 0777 system system

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+<!-- allow background start -->
+<allow-bg-intents package="com.zui.desktoplauncher"/>
+<!-- hide notify for frontground -->
+<hide-fg-notify package = "com.zui.desktoplauncher" />
+
+    <default_allow_auto_run package="com.zui.desktoplauncher" allowtype="hide" />
+</config>

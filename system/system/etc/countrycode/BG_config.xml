@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list>
+    <config name="remove_apk" value="Videos"/>
+    <config name="language" value="en_US"/>
+    <config name="lenovo_usage_statistics_menu" value="yes"/>
+    <config name="data_traffic" value="yes"/>
+    <config name="timezone" value="Europe/Sofia"/>
+    <config name="regional_specialty_apk" value="PlayGames;Opera;OperaProvider"/>
+</list>

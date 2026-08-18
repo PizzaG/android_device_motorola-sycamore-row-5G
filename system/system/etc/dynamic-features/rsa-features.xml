@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!---******************************************************************************
+* @file    eea-features.xml
+* @brief   configuration file for EEA features
+*  *****************************************************************************-->
+
+<features>
+<property name="rvo3">
+    <feature name="com.google.android.feature.PREMIER_TIER" />
+</property>
+</features>

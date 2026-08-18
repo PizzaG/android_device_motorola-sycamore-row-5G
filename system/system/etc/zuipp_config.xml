@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FeatureConfig version="20240314">
+
+    <!-- By项目配置此功能，对应ZuiPP中的FeatureList.java -->
+    <!-- AppFreeze : 进程冻结-->
+    <!-- OverHeat : 发热先知-->
+    <!-- PowerBalance : 功耗均衡-->
+    <!-- DeviceIdle : Deviceidle-->
+    <!-- OtherPolicy : 其它应用策略-->
+    <!-- GamePolicy : 游戏策略-->
+    <!-- MultiWindowManager : MultiWindow监控-->
+    <!-- RefreshRateManager : 智能刷新率-->
+    <!-- JankReport : JankReport-->
+    <!--示例<Item>AppFreeze OverHeat</Item>-->
+    <Item>GamePolicy</Item>
+    <Item>MultiWindowManager</Item>
+    <Item>OverHeat</Item>
+    <Item>DeviceIdle</Item>
+
+</FeatureConfig>

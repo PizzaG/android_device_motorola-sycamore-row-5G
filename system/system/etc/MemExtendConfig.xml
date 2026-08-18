@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<MemExtendConfig>
+     <MemorySize size="6">
+            <Prop Name="schem2MemAvailableHigh" Value="2953216" />
+            <Prop Name="anonReclaimRatio" Value="16" />
+            <Prop Name="schem2ReclaimTypeHigh" Value="1" />
+            <Prop Name="schem2MemAvailableMedium" Value="2429828" />
+            <Prop Name="schem2ReclaimTypeMedium" Value="1" />
+            <Prop Name="schem2MemAvailableLow" Value="1329152" />
+            <Prop Name="schem2ReclaimTypeLow" Value="1" />
+            <Prop Name="schem2ReclaimTypeAll" Value="2" />
+            <Prop Name="schem2StopReclaim" Value="5" />
+            <Prop Name="maxReclaimLimit" Value="3200" />
+            <Prop Name="schem2WriteReclaimIntervalTime" Value="200" />
+
+    </MemorySize>
+    <MemorySize size="8">
+            <Prop Name="schem2MemAvailableHigh" Value="3670016" />
+            <Prop Name="anonReclaimRatio" Value="64" />
+            <Prop Name="schem2ReclaimTypeHigh" Value="1" />
+            <Prop Name="schem2MemAvailableMedium" Value="2621440" />
+            <Prop Name="schem2ReclaimTypeMedium" Value="1" />
+            <Prop Name="schem2MemAvailableLow" Value="1572864" />
+            <Prop Name="schem2ReclaimTypeLow" Value="1" />
+            <Prop Name="schem2ReclaimTypeAll" Value="2" />
+            <Prop Name="schem2StopReclaim" Value="5" />
+            <Prop Name="maxReclaimLimit" Value="9600" />
+            <Prop Name="schem2WriteReclaimIntervalTime" Value="300" />
+
+    </MemorySize>
+    <MemorySize size="12">
+            <Prop Name="schem2MemAvailableHigh" Value="6000000" />
+            <Prop Name="anonReclaimRatio" Value="64" />
+            <Prop Name="schem2ReclaimTypeHigh" Value="1" />
+            <Prop Name="schem2MemAvailableMedium" Value="4000000" />
+            <Prop Name="schem2ReclaimTypeMedium" Value="1" />
+            <Prop Name="schem2MemAvailableLow" Value="2800000" />
+            <Prop Name="schem2ReclaimTypeLow" Value="1" />
+            <Prop Name="schem2ReclaimTypeAll" Value="2" />
+            <Prop Name="schem2StopReclaim" Value="5" />
+            <Prop Name="maxReclaimLimit" Value="9600" />
+            <Prop Name="schem2WriteReclaimIntervalTime" Value="300" />
+
+    </MemorySize>
+    <MemorySize size="16">
+            <Prop Name="schem2MemAvailableHigh" Value="9000000" />
+            <Prop Name="anonReclaimRatio" Value="64" />
+            <Prop Name="schem2ReclaimTypeHigh" Value="1" />
+            <Prop Name="schem2MemAvailableMedium" Value="6000000" />
+            <Prop Name="schem2ReclaimTypeMedium" Value="1" />
+            <Prop Name="schem2MemAvailableLow" Value="5000000" />
+            <Prop Name="schem2ReclaimTypeLow" Value="1" />
+            <Prop Name="schem2ReclaimTypeAll" Value="2" />
+            <Prop Name="schem2StopReclaim" Value="5" />
+            <Prop Name="maxReclaimLimit" Value="9600" />
+            <Prop Name="schem2WriteReclaimIntervalTime" Value="300" />
+
+    </MemorySize>
+</MemExtendConfig>

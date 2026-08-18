@@ -1,0 +1,6 @@
+on post-fs-data
+# mkdir iplog folder
+mkdir /data/misc/iplog 0770 system system
+
+on property:sys.sysctl.debug_os_data=*
+    write sys/module/xt_qtaguid/parameters/debug_os_data ${sys.sysctl.debug_os_data}

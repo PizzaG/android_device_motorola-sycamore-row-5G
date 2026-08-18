@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <hide-fg-notify package="com.zui.pp" />
+    <default_allow_auto_run package="com.zui.pp" allowtype="hide" />
+</config>

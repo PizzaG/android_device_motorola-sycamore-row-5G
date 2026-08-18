@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AppPolicy version="20240314">
+    <!--<NameDefine>  Attribute define, do not modify-->
+    <!--<AttributeName name = "PerformanceType" id="0">
+        <AttributeValue value="Game">启用游戏级别高性能</AttributeValue>
+        <AttributeValue value="Full">启用最高级别性能</AttributeValue>
+        <AttributeValue value="LowPower">启用低功耗模式</AttributeValue>
+        <AttributeValue value="Uclamp">启用boost模式</AttributeValue>
+    </AttributeName>
+    <AttributeName name = "GovernorConfig" id="1">
+        <AttributeValue value="Optimize">启动governor节点写入，原schedboost = 100</AttributeValue>
+        <AttributeValue value="Default">启动governor节点写入，原schedboost = 0</AttributeValue>
+    </AttributeName>
+    <AttributeName name = "GameLimitConfig">
+        游戏参数配置，用于游戏助手进行CPUGPU限频提频boost。格式如下：
+        temp1:小核_大核_超大核_GPU|temp2:小核_大核_超大核_GPU（最多支持4个temp类，以“|”分割）
+        均衡模式参数 省电模式参数 野兽模式参数（以“ ”分割）
+    </AttributeName>
+    <AttributeName name = "UPQLimitConfig">
+        UPQ游戏参数配置，在应用支持UPQ时替代均衡模式：
+        temp1:小核_大核_超大核_GPU|temp2:小核_大核_超大核_GPU（最多支持4个temp类，以“|”分割）
+        UPQ级别1参数 UPQ级别2参数 UPQ级别3参数 UPQ级别4参数 UPQ级别5参数（以“ ”分割）
+    </AttributeName>
+    <AttributeName name = "BestImageLimitConfig">
+        极致画质游戏参数配置，在应用设置极致画质时替代GameLimitConfig：
+        temp1:小核_大核_超大核_GPU|temp2:小核_大核_超大核_GPU（最多支持4个temp类，以“|”分割）
+        均衡模式参数 省电模式参数 野兽模式参数（以“ ”分割）
+    </AttributeName>
+    <AttributeName name = "ThermalConfig">
+        设置thermal code，供bsp进行不同的thermal策略
+    </AttributeName>
+    <AttributeName name="AssistentSupport">
+        <AttributeValue value="TGPA">
+            游戏支持TGPA游戏助手，需要等待游戏连接TAssistent。
+        </AttributeValue>
+    </AttributeName>
+    <AttributeName name="RefreshRate">
+        应用/游戏的特殊刷新率要求，在设置中选择智能刷新率后生效
+    </AttributeName>
+    <AttributeName name="PowerSaveRefreshRate">
+        应用/游戏的特殊省电模式刷新率要求，在游戏下拉栏中选择节能模式后生效
+    </AttributeName>
+</NameDefine>-->
+
+    <AppList type="game">
+        <!-- 名单内游戏config必须包含ThermalConfig，RefreshRateConfig,
+          PowerSaveRefreshRateConfig，SpecialBoostConfig和LimitConfig。名单外游戏走default配置-->
+        <App name="default" pkg="default">
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <!-- 默认游戏改用探针-->
+            <!--            <Attribute name="RefreshRateConfig">4</Attribute>-->
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="原神" pkg="com.miHoYo.Yuanshen">
+            <Attribute name="ThermalConfig">205 105 305</Attribute>
+            <Attribute name="SpecialBoostConfig">GameBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="JankConfig">990,55.0,58.0,3,7000,70,60</Attribute>
+            <Attribute name="LimitConfig">0:1_1_1_1|2:2_2_2_2|3:3_3_3_3|4:4_4_4_4 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:7_7_7_7|8:8_8_8_8|9:9_9_9_9|10:10_10_10_10</Attribute>
+        </App>
+        <App name="原神" pkg="com.miHoYo.GenshinImpact">
+            <Attribute name="ThermalConfig">205 105 305</Attribute>
+            <Attribute name="SpecialBoostConfig">GameBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="JankConfig">990,55.0,58.0,3,7000,70,60</Attribute>
+            <Attribute name="LimitConfig">0:1_1_1_1|2:2_2_2_2|3:3_3_3_3|4:4_4_4_4 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:7_7_7_7|8:8_8_8_8|9:9_9_9_9|10:10_10_10_10</Attribute>
+        </App>
+        <App name="崩坏：星穹铁道" pkg="com.miHoYo.hkrpg">
+            <Attribute name="ThermalConfig">205 105 305</Attribute>
+            <Attribute name="SpecialBoostConfig">GameBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="和平精英" pkg="com.tencent.tmgp.pubgmhd">
+            <Attribute name="ThermalConfig">201 101 301</Attribute>
+            <Attribute name="RefreshRateConfig">90</Attribute>
+            <Attribute name="SpecialBoostConfig">GameBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="LimitConfig">0:31_31_31_31|32:32_32_32_32|33:33_33_33_33|34:34_34_34_34 0:23_23_23_23|24:24_24_24_24|25:25_25_25_25 0:27_27_27_27|28:28_28_28_28|29:29_29_29_29|30:30_30_30_30</Attribute>
+        </App>
+        <App name="王者荣耀" pkg="com.tencent.tmgp.sgame">
+            <Attribute name="ThermalConfig">201 101 301</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:11_11_11_11|12:12_12_12_12|13:13_13_13_13|14:14_14_14_14 0:15_15_15_15|15:15_15_15_15|15:15_15_15_15 0:19_19_19_19|20:20_20_20_20|21:21_21_21_21|22:22_22_22_22</Attribute>
+        </App>
+        <App name="王者荣耀体验服" pkg="com.tencent.tmgp.sgamece">
+            <Attribute name="ThermalConfig">201 101 301</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:11_11_11_11|12:12_12_12_12|13:13_13_13_13|14:14_14_14_14 0:15_15_15_15|15:15_15_15_15|15:15_15_15_15 0:19_19_19_19|20:20_20_20_20|21:21_21_21_21|22:22_22_22_22</Attribute>
+        </App>
+        <App name="跑跑卡丁车手机版" pkg="com.tiancity.mpopkart.lenovo">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="跑跑卡丁车官方竞速版" pkg="com.tencent.tmgp.WePop">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="英雄联盟手游" pkg="com.tencent.lolm">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:41_41_41_41|42:42_42_42_42|43:43_43_43_43|44:44_44_44_44 0:45_45_45_45|46:46_46_46_46|47:47_47_47_47 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="LOL" pkg="com.riotgames.league.wildrift">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:41_41_41_41|42:42_42_42_42|43:43_43_43_43|44:44_44_44_44 0:45_45_45_45|46:46_46_46_46|47:47_47_47_47 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="光明山脉" pkg="com.protopop.brightridge">
+            <Attribute name="ThermalConfig">200 100 700</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:52_52_52_52|53:53_53_53_53|54:54_54_54_54|55:55_55_55_55 0:56_56_56_56|57:57_57_57_57|58:58_58_58_58 0:59_59_59_59|60:60_60_60_60|61:61_61_61_61|62:62_62_62_62</Attribute>
+        </App>
+        <App name="使命召唤" pkg="com.tencent.tmgp.cod">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:63_63_63_63|64:64_64_64_64|65:65_65_65_65|66:66_66_66_66 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:70_70_70_70|71:71_71_71_71|72:72_72_72_72|73:73_73_73_73</Attribute>
+        </App>
+        <App name="使命召唤" pkg="com.rayjoy.android.worldwar.lenovo">
+            <Attribute name="ThermalConfig">205 105 305</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:63_63_63_63|64:64_64_64_64|65:65_65_65_65|66:66_66_66_66 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:70_70_70_70|71:71_71_71_71|72:72_72_72_72|73:73_73_73_73</Attribute>
+        </App>
+        <App name="王牌战士" pkg="com.tencent.af">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="穿越火线" pkg="com.tencent.tmgp.cf">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="LimitConfig">0:74_74_74_74|75:75_75_75_75|76:76_76_76_76|77:77_77_77_77 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="天涯明月刀" pkg="com.tencent.tmgp.wuxia">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="明日之后" pkg="com.netease.mrzh.lenovo">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="明日之后网易官方版" pkg="com.netease.mrzh">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="幻塔" pkg="com.pwrd.hotta.laohu">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="幻塔" pkg="com.hottagames.hotta.lenovo">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="QQ飞车" pkg="com.tencent.tmgp.speedmobile">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:85_85_85_85|86:86_86_86_86|87:87_87_87_87|88:88_88_88_88 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="一梦江湖" pkg="com.netease.wyclx">
+            <Attribute name="ThermalConfig">207 0 0</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="一梦江湖" pkg="com.netease.wyclx.lenovo">
+            <Attribute name="ThermalConfig">207 0 0</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="第五人格网易官方版" pkg="com.netease.dwrg">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="诺亚之心" pkg="com.tencent.ref">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="香肠派对" pkg="com.sofunny.Sausage">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:96_96_96_96|97:97_97_97_97|98:98_98_98_98|99:99_99_99_99 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="迷你世界" pkg="com.minitech.miniworld.TMobile.Lenovo">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:107_107_107_107|108:108_108_108_108|109:109_109_109_109|110:110_110_110_110 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="迷你世界" pkg="com.minitech.miniworld">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:107_107_107_107|108:108_108_108_108|109:109_109_109_109|110:110_110_110_110 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="新欢乐斗地主大奖赛" pkg="com.bomwan.xhl.lenovo">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:118_118_118_118|119:119_119_119_119|120:120_120_120_120|121:121_121_121_121 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="欢乐斗地主" pkg="com.qqgame.hlddz">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:118_118_118_118|119:119_119_119_119|120:120_120_120_120|121:121_121_121_121 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="欢乐斗地主" pkg="paile.mengle.operator.lenovo">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:118_118_118_118|119:119_119_119_119|120:120_120_120_120|121:121_121_121_121 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="光遇" pkg="com.tencent.tmgp.eyou.eygy">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:140_140_140_140|141:141_141_141_141|142:142_142_142_142|143:143_143_143_143 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="光遇" pkg="com.netease.sky">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:140_140_140_140|141:141_141_141_141|142:142_142_142_142|143:143_143_143_143 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="暗区突围" pkg="com.tencent.mf.uam">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="元气骑士" pkg="yuanqiqishi.game.lenovo">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="元气骑士" pkg="com.ChillyRoom.DungeonShooter">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="我的世界之冬季工艺4" pkg="net.SandStormEarl.WC4">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="我的世界" pkg="com.netease.mc">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="我的世界" pkg="com.netease.mc.lenovo">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="绝地求生：全军出击" pkg="com.tencent.tmgp.pubgm">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="我的世界" pkg="com.tencent.tmgp.wdsj666">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="我的世界" pkg="com.netease.x19">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="王牌竞速" pkg="com.netease.aceracer.lenovo">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="王牌竞速" pkg="com.netease.aceracer">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="荒野乱斗" pkg="com.youzu.bs.lenovo">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">144</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="荒野乱斗" pkg="com.supercell.brawlstars.GameAppYoozoo">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">144</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="PUBG MOBILE" pkg="com.tencent.ig">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="FIFA" pkg="com.tencent.fifamobile">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="球球大作战" pkg="com.ztgame.bob">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:151_151_151_151|152:152_152_152_152|153:153_153_153_153|154:154_154_154_154 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="地铁跑酷" pkg="com.kiloo.subwaysurf">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">120</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:162_162_162_162|163:163_163_163_163|164:164_164_164_164|165:165_165_165_165 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="开心消消乐" pkg="com.happyelements.AndroidAnimal">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:173_173_173_173|174:174_174_174_174|175:175_175_175_175|176:176_176_176_176 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="崩坏3" pkg="com.miHoYo.bh3.lenovo">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">90</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:187_187_187_187|188:188_188_188_188|189:189_189_189_189|190:190_190_190_190 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="崩坏3官方版" pkg="com.miHoYo.enterprise.NGHSoD">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">90</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:187_187_187_187|188:188_188_188_188|189:189_189_189_189|190:190_190_190_190 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="崩坏3测试版" pkg="com.miHoYo.enterprise.NGHSoDBeta">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">90</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:187_187_187_187|188:188_188_188_188|189:189_189_189_189|190:190_190_190_190 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="暗黑破坏神：不朽" pkg="com.tencent.tmgp.g67">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="暗黑破坏神：不朽" pkg="com.netease.g67">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="暗黑破坏神：不朽" pkg="com.netease.g67.lenovo">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="植物大战僵尸2（回忆之旅）" pkg="com.popcap.pvz2cthdlx">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:129_129_129_129|130:130_130_130_130|131:131_131_131_131|132:132_132_132_132 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="狂野飙车9：竞速传奇" pkg="com.aligames.kuang.kybc">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:201_201_201_201|202:202_202_202_202|203:203_203_203_203|204:204_204_204_204 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="狂野飙车9：竞速传奇" pkg="com.aligames.kuang.kybc.lenovo">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:201_201_201_201|202:202_202_202_202|203:203_203_203_203|204:204_204_204_204 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="狂野飙车9" pkg="com.gameloft.android.ANMP.GloftA9HM">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:201_201_201_201|202:202_202_202_202|203:203_203_203_203|204:204_204_204_204 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="部落冲突" pkg="com.supercell.clashofclans.lenovo">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:212_212_212_212|213:213_213_213_213|214:214_214_214_214|215:215_215_215_215 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="部落冲突：其他渠道1" pkg="com.tencent.tmgp.supercell.clashofclans">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:212_212_212_212|213:213_213_213_213|214:214_214_214_214|215:215_215_215_215 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="部落冲突：其他渠道2" pkg="com.supercell.clashofclans.kunlun">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:212_212_212_212|213:213_213_213_213|214:214_214_214_214|215:215_215_215_215 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="部落冲突：皇室战争" pkg="com.supercell.clashroyale.lenovo">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:212_212_212_212|213:213_213_213_213|214:214_214_214_214|215:215_215_215_215 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="战双帕弥什" pkg="com.kurogame.haru.hero">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="贪吃蛇大作战" pkg="com.wepie.snakegame.lenovo">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="蛋仔派对" pkg="com.netease.party.lenovo">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="深空之眼" pkg="com.yongshi.tenojo.ys">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">60</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">30</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="Roblox" pkg="com.roblox.client">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="Brawl Stars" pkg="com.supercell.brawlstars">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="Stumble Guys: Multiplayer Royale" pkg="com.kitkagames.fallbuddies">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="Among Us" pkg="com.innersloth.spacemafia">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="Garena Free Fire - Rampage" pkg="com.dts.freefireth">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="Craftsman: Building Craft" pkg="com.craftsman.go">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="Garena Free Fire MAX" pkg="com.dts.freefiremax">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="Ludo King" pkg="com.ludo.king">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="Minecraft" pkg="com.mojang.minecraftpe">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="Asphalt9: Legends" pkg="com.gameloft.android.ANMP.GloftA9HM">
+            <Attribute name="ThermalConfig">0 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="金铲铲之战" pkg="com.tencent.jkchess">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="RefreshRateConfig">144</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:223_223_223_223|224:224_224_224_224|225:225_225_225_225|226:226_226_226_226 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="阴阳师" pkg="com.netease.onmyoji.lenovo">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="阴阳师网易官方版" pkg="com.netease.onmyoji">
+            <Attribute name="ThermalConfig">200 100 300</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="激流快艇2" pkg="com.vectorunit.redcmgeplaycn">
+            <Attribute name="ThermalConfig">5010 5010 5010</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="灌篮高手" pkg="com.denachina.g13002010.lenovo">
+            <Attribute name="ThermalConfig">206 106 306</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+        <App name="灌篮高手" pkg="com.denachina.g13002010">
+            <Attribute name="ThermalConfig">206 106 306</Attribute>
+            <Attribute name="PowerSaveRefreshRateConfig">60</Attribute>
+            <Attribute name="SpecialBoostConfig">NoBoost NoBoost SavageBoost</Attribute>
+            <Attribute name="LimitConfig">0:-4_-4_-4_-4|-41:-41_-41_-41_-41|-42:-42_-42_-42_-42|-43:-43_-43_-43_-43 0:-2_-2_-2_-2|-21:-21_-21_-21_-21|-22:-22_-22_-22_-22 0:-1_-1_-1_-1|-11:-11_-11_-11_-11|-12:-12_-12_-12_-12|-13:-13_-13_-13_-13</Attribute>
+        </App>
+    </AppList>
+
+</AppPolicy>

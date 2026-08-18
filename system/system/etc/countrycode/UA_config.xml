@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list>
+    <config name="regional_specialty_apk" value="GooglePay;PlayGames"/>
+    <config name="language" value="uk_UA"/>
+    <config name="date_formate_dd_mm_yyyy" value="yes"/>
+    <config name="timezone" value="Europe/Kiev"/>
+</list>

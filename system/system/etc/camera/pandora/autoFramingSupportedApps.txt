@@ -1,0 +1,10 @@
+com.tencent.mm
+com.tencent.mobileqq
+com.ss.android.lark
+com.tencent.wemeet.app
+com.alibaba.android.rimet
+com.microsoft.teams
+us.zoom.videomeetings
+com.whatsapp
+com.google.android.apps.meetings
+com.google.android.apps.tachyon

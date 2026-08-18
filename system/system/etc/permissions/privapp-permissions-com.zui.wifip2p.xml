@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<permissions>
+    <privapp-permissions package="com.zui.wifip2p">
+            <permission name="android.permission.ACCESS_FINE_LOCATION" />
+            <permission name="android.permission.ACCESS_WIFI_STATE" />
+            <permission name="android.permission.BLUETOOTH_ADVERTISE" />
+            <permission name="android.permission.BLUETOOTH_CONNECT" />
+            <permission name="android.permission.BLUETOOTH_SCAN" />
+            <permission name="android.permission.CHANGE_WIFI_STATE" />
+            <permission name="android.permission.CHANGE_NETWORK_STATE" />
+            <permission name="android.permission.INTERACT_ACROSS_USERS" />
+            <permission name="android.permission.INTERNET" />
+            <permission name="android.permission.ACCESS_NETWORK_STATE" />
+            <permission name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <permission name="android.permission.READ_EXTERNAL_STORAGE" />
+            <permission name="android.permission.BLUETOOTH" />
+            <permission name="android.permission.BLUETOOTH_ADMIN" />
+            <permission name="android.permission.VIBRATE"/>
+            <permission name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
+    </privapp-permissions>
+</permissions>

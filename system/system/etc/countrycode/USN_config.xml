@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list>
+    <config name="regional_specialty_apk" value="NetflixStubDebug;"/>
+    <config name="remove_apk" value="NetflixStub"/>
+</list>

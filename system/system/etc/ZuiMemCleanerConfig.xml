@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ZuiMemCleanerConfig>
+    <MemorySize size="4">
+        <MemoryExt switch="on">
+            <Prop Name="zuimemory.enable" Value="true" />
+            <Prop Name="lmkd.psi_low" Value="140" />
+            <Prop Name="lmkd.psi_medium" Value="220" />
+            <Prop Name="lmkd.psi_critical" Value="200" />
+            <Prop Name="zuimemory.quickkill_aggressive_clean_count" Value="5" />
+            <Prop Name="zuimemory.quickkill_moderate_clean_count" Value="3" />
+            <Prop Name="zuimemory.aggressive_clean_count" Value="1" />
+            <Prop Name="zuimemory.moderate_clean_count" Value="1" />
+            <Prop Name="zuimemory.use_quick_kill" Value="false" />
+            <Prop Name="zuimemory.kswapd_scan_speed" Value="40000" />
+            <Prop Name="zuimemory.active_kswapd_scan_speed" Value="80000" />
+            <Prop Name="zuimemory.direct_scan_speed" Value="2000" />
+            <Prop Name="zuimemory.active_direct_scan_speed" Value="4000" />
+            <Prop Name="zuimemory.mem_free" Value="80" />
+            <Prop Name="zuimemory.critical_mem_free" Value="60" />
+            <Prop Name="zuimemory.cache_as_free_pct" Value="2" />
+            <Prop Name="zuimemory.min_free_swap_pct" Value="30" />
+            <Prop Name="zuimemory.critical_min_free_swap_pct" Value="15" />
+            <Prop Name="zuimemory.double_check_mem_free" Value="true" />
+            <Prop Name="zuimemory.mem_free_spare_pct" Value="10" />
+            <Prop Name="zuimemory.mem_free_spare_pct_critical" Value="20" />
+        </MemoryExt>
+        <MemoryExt switch="off">
+            <Prop Name="zuimemory.enable" Value="true" />
+            <Prop Name="lmkd.psi_low" Value="140" />
+            <Prop Name="lmkd.psi_medium" Value="220" />
+            <Prop Name="lmkd.psi_critical" Value="200" />
+            <Prop Name="zuimemory.quickkill_aggressive_clean_count" Value="5" />
+            <Prop Name="zuimemory.quickkill_moderate_clean_count" Value="3" />
+            <Prop Name="zuimemory.aggressive_clean_count" Value="1" />
+            <Prop Name="zuimemory.moderate_clean_count" Value="1" />
+            <Prop Name="zuimemory.use_quick_kill" Value="false" />
+            <Prop Name="zuimemory.kswapd_scan_speed" Value="40000" />
+            <Prop Name="zuimemory.active_kswapd_scan_speed" Value="80000" />
+            <Prop Name="zuimemory.direct_scan_speed" Value="2000" />
+            <Prop Name="zuimemory.active_direct_scan_speed" Value="4000" />
+            <Prop Name="zuimemory.mem_free" Value="80" />
+            <Prop Name="zuimemory.critical_mem_free" Value="60" />
+            <Prop Name="zuimemory.cache_as_free_pct" Value="2" />
+            <Prop Name="zuimemory.min_free_swap_pct" Value="30" />
+            <Prop Name="zuimemory.critical_min_free_swap_pct" Value="15" />
+            <Prop Name="zuimemory.double_check_mem_free" Value="true" />
+            <Prop Name="zuimemory.mem_free_spare_pct" Value="10" />
+            <Prop Name="zuimemory.mem_free_spare_pct_critical" Value="25" />
+        </MemoryExt>
+    </MemorySize>
+     <MemorySize size="6">
+        <MemoryExt switch="on">
+            <Prop Name="zuimemory.enable" Value="true" />
+            <Prop Name="lmkd.psi_low" Value="140" />
+            <Prop Name="lmkd.psi_medium" Value="200" />
+            <Prop Name="lmkd.psi_critical" Value="500" />
+            <Prop Name="zuimemory.quickkill_aggressive_clean_count" Value="5" />
+            <Prop Name="zuimemory.quickkill_moderate_clean_count" Value="3" />
+            <Prop Name="zuimemory.aggressive_clean_count" Value="2" />
+            <Prop Name="zuimemory.moderate_clean_count" Value="1" />
+            <Prop Name="zuimemory.use_quick_kill" Value="false" />
+            <Prop Name="zuimemory.kswapd_scan_speed" Value="80000" />
+            <Prop Name="zuimemory.active_kswapd_scan_speed" Value="150000" />
+            <Prop Name="zuimemory.direct_scan_speed" Value="10000000" />
+            <Prop Name="zuimemory.active_direct_scan_speed" Value="100000000" />
+            <Prop Name="zuimemory.mem_free" Value="90" />
+            <Prop Name="zuimemory.critical_mem_free" Value="40" />
+            <Prop Name="zuimemory.cache_as_free_pct" Value="0" />
+            <Prop Name="zuimemory.min_free_swap_pct" Value="10" />
+            <Prop Name="zuimemory.critical_min_free_swap_pct" Value="5" />
+            <Prop Name="zuimemory.double_check_mem_free" Value="true" />
+            <Prop Name="zuimemory.mem_free_spare_pct" Value="10" />
+            <Prop Name="zuimemory.mem_free_spare_pct_critical" Value="20" />
+        </MemoryExt>
+        <MemoryExt switch="off">
+            <Prop Name="zuimemory.enable" Value="true" />
+            <Prop Name="lmkd.psi_low" Value="140" />
+            <Prop Name="lmkd.psi_medium" Value="200" />
+            <Prop Name="lmkd.psi_critical" Value="500" />
+            <Prop Name="zuimemory.quickkill_aggressive_clean_count" Value="5" />
+            <Prop Name="zuimemory.quickkill_moderate_clean_count" Value="3" />
+            <Prop Name="zuimemory.aggressive_clean_count" Value="1" />
+            <Prop Name="zuimemory.moderate_clean_count" Value="1" />
+            <Prop Name="zuimemory.use_quick_kill" Value="false" />
+            <Prop Name="zuimemory.kswapd_scan_speed" Value="60000" />
+            <Prop Name="zuimemory.active_kswapd_scan_speed" Value="100000" />
+            <Prop Name="zuimemory.direct_scan_speed" Value="2000" />
+            <Prop Name="zuimemory.active_direct_scan_speed" Value="4000" />
+            <Prop Name="zuimemory.mem_free" Value="100" />
+            <Prop Name="zuimemory.critical_mem_free" Value="65" />
+            <Prop Name="zuimemory.cache_as_free_pct" Value="0" />
+            <Prop Name="zuimemory.min_free_swap_pct" Value="30" />
+            <Prop Name="zuimemory.critical_min_free_swap_pct" Value="15" />
+            <Prop Name="zuimemory.double_check_mem_free" Value="true" />
+            <Prop Name="zuimemory.mem_free_spare_pct" Value="10" />
+            <Prop Name="zuimemory.mem_free_spare_pct_critical" Value="20" />
+        </MemoryExt>
+    </MemorySize>
+    <MemorySize size="8">
+        <MemoryExt switch="on">
+            <Prop Name="zuimemory.enable" Value="true" />
+            <Prop Name="lmkd.psi_low" Value="120" />
+            <Prop Name="lmkd.psi_medium" Value="200" />
+            <Prop Name="lmkd.psi_critical" Value="200" />
+            <Prop Name="zuimemory.quickkill_aggressive_clean_count" Value="5" />
+            <Prop Name="zuimemory.quickkill_moderate_clean_count" Value="3" />
+            <Prop Name="zuimemory.aggressive_clean_count" Value="2" />
+            <Prop Name="zuimemory.moderate_clean_count" Value="1" />
+            <Prop Name="zuimemory.use_quick_kill" Value="true" />
+            <Prop Name="zuimemory.kswapd_scan_speed" Value="50000" />
+            <Prop Name="zuimemory.active_kswapd_scan_speed" Value="100000" />
+            <Prop Name="zuimemory.direct_scan_speed" Value="1000" />
+            <Prop Name="zuimemory.active_direct_scan_speed" Value="2000" />
+            <Prop Name="zuimemory.mem_free" Value="120" />
+            <Prop Name="zuimemory.critical_mem_free" Value="90" />
+            <Prop Name="zuimemory.cache_as_free_pct" Value="2" />
+            <Prop Name="zuimemory.min_free_swap_pct" Value="30" />
+            <Prop Name="zuimemory.critical_min_free_swap_pct" Value="15" />
+            <Prop Name="zuimemory.double_check_mem_free" Value="true" />
+            <Prop Name="zuimemory.mem_free_spare_pct" Value="10" />
+            <Prop Name="zuimemory.mem_free_spare_pct_critical" Value="10" />
+        </MemoryExt>
+        <MemoryExt switch="off">
+            <Prop Name="zuimemory.enable" Value="true" />
+            <Prop Name="lmkd.psi_low" Value="120" />
+            <Prop Name="lmkd.psi_medium" Value="200" />
+            <Prop Name="lmkd.psi_critical" Value="200" />
+            <Prop Name="zuimemory.quickkill_aggressive_clean_count" Value="5" />
+            <Prop Name="zuimemory.quickkill_moderate_clean_count" Value="3" />
+            <Prop Name="zuimemory.aggressive_clean_count" Value="2" />
+            <Prop Name="zuimemory.moderate_clean_count" Value="1" />
+            <Prop Name="zuimemory.use_quick_kill" Value="true" />
+            <Prop Name="zuimemory.kswapd_scan_speed" Value="50000" />
+            <Prop Name="zuimemory.active_kswapd_scan_speed" Value="100000" />
+            <Prop Name="zuimemory.direct_scan_speed" Value="1000" />
+            <Prop Name="zuimemory.active_direct_scan_speed" Value="2000" />
+            <Prop Name="zuimemory.mem_free" Value="120" />
+            <Prop Name="zuimemory.critical_mem_free" Value="90" />
+            <Prop Name="zuimemory.cache_as_free_pct" Value="2" />
+            <Prop Name="zuimemory.min_free_swap_pct" Value="30" />
+            <Prop Name="zuimemory.critical_min_free_swap_pct" Value="15" />
+            <Prop Name="zuimemory.double_check_mem_free" Value="true" />
+            <Prop Name="zuimemory.mem_free_spare_pct" Value="10" />
+            <Prop Name="zuimemory.mem_free_spare_pct_critical" Value="10" />
+        </MemoryExt>
+    </MemorySize>
+
+    <!-- add permanent whitelist, apps in this list should never by killed by ZMC -->
+    <PermanentWhiteList>
+        <PermanentPackageName>com.android.mtp</PermanentPackageName>
+        <PermanentPackageName>com.google.android.tts</PermanentPackageName>
+        <PermanentPackageName>com.android.devicelockcontroller</PermanentPackageName>
+        <!-- DEPLOYU-12273 alarm will NOT be triggered after deskclock is force-stopped. -->
+        <PermanentPackageName>com.zui.deskclock</PermanentPackageName>
+        <!-- END DEPLOYU-12273 -->
+
+        <!--Sycamore code for SYCAMORE-15405 by hubc1 at 20250311 start-->
+        <PermanentPackageName>com.hq.autotest</PermanentPackageName>
+        <!--Sycamore code for SYCAMORE-15405 by hubc1 at 20250311 end-->
+
+        <!--Sycamore code for SYCAMORE-15286 by zengzc1 at 20250408 start-->
+        <PermanentPackageName>com.zui.udevice</PermanentPackageName>
+        <!--Sycamore code for SYCAMORE-15286 by zengzc1 at 20250408 end-->
+
+        <!--Sycamore code for SYCAMORE-21191 by zengzc1 at 20250417 start-->
+        <PermanentPackageName>com.lenovo.ota</PermanentPackageName>
+        <!--Sycamore code for SYCAMORE-21191 by zengzc1 at 20250417 end-->
+
+        <!-- add whitelist for mdm app -->
+        <PermanentPackageName>com.nix</PermanentPackageName>
+        <PermanentPackageName>com.nix.MainFrm</PermanentPackageName>
+        <PermanentPackageName>net.soti.mobicontrol.lenovo</PermanentPackageName>
+        <PermanentPackageName>com.mobileiron.anyware.android</PermanentPackageName>
+        <PermanentPackageName>com.mobileiron</PermanentPackageName>
+        <PermanentPackageName>com.airwatch.androidagent</PermanentPackageName>
+        <PermanentPackageName>com.viso.mdm</PermanentPackageName>
+        <PermanentPackageName>com.usco.student</PermanentPackageName>
+        <PermanentPackageName>com.usc.scmanager</PermanentPackageName>
+        <PermanentPackageName>com.usc.scmanager.v20</PermanentPackageName>
+        <PermanentPackageName>com.usc.scmanager.v21</PermanentPackageName>
+        <PermanentPackageName>com.usc.scmanager.v22</PermanentPackageName>
+        <PermanentPackageName>com.usc.scmanager.v23</PermanentPackageName>
+        <PermanentPackageName>com.usc.scmanager.v24</PermanentPackageName>
+        <PermanentPackageName>com.usc.scmanager.v25</PermanentPackageName>
+        <PermanentPackageName>com.usc.scmanager.v26</PermanentPackageName>
+        <PermanentPackageName>com.usc.scmanager.v27</PermanentPackageName>
+        <PermanentPackageName>com.usc.scmanager.v29</PermanentPackageName>
+        <PermanentPackageName>com.usc.scmanager.v77</PermanentPackageName>
+        <PermanentPackageName>com.thinkUEM</PermanentPackageName>
+        <PermanentPackageName>com.lenovo.ocpl</PermanentPackageName>
+        <PermanentPackageName>com.qualcomm.qti.poweroffalarm</PermanentPackageName>
+
+        <!-- add whitelist for only SYCAMORE app -->
+        <PermanentPackageName>com.tencent.mm</PermanentPackageName>
+        <PermanentPackageName>com.tencent.mobileqq</PermanentPackageName>
+        <PermanentPackageName>com.huaqin.factoryservice</PermanentPackageName>
+        <PermanentPackageName>com.android.traceur</PermanentPackageName>
+        <PermanentPackageName>com.google.android.deskclock</PermanentPackageName>
+        <PermanentPackageName>com.google.android.youtube</PermanentPackageName>
+        <PermanentPackageName>com.google.android.gm</PermanentPackageName>
+        <PermanentPackageName>com.google.android.apps.maps</PermanentPackageName>
+        <PermanentPackageName>com.facebook.katana</PermanentPackageName>
+        <PermanentPackageName>com.instagram.android</PermanentPackageName>
+        <PermanentPackageName>com.whatsapp</PermanentPackageName>
+        <PermanentPackageName>com.facebook.orca</PermanentPackageName>
+    </PermanentWhiteList>
+
+    <!-- apps from this list will be ignored first, unless there are no other apps to clean up -->
+    <Whitelist package="com.lenovo.weathercenter" />
+    <Whitelist package="com.android.permissioncontroller"/>
+    <Whitelist package="com.zui.homesettings"/>
+    <Whitelist package="com.tblenovo.center"/>
+
+</ZuiMemCleanerConfig>

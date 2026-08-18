@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exceptions>
+    <exception
+        package="com.zui.resolver">
+        <permission name="android.permission.ACCESS_SHORTCUTS"/>
+        <permission name="android.permission.BIND_RESOLVER_RANKER_SERVICE" fixed="false"/>
+        <permission name="android.permission.GET_ANY_PROVIDER_TYPE" fixed="false"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS" fixed="false"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL" fixed="false"/>
+        <permission name="android.permission.MANAGE_APP_PREDICTIONS" fixed="false"/>
+        <permission name="android.permission.MANAGE_USERS" fixed="false"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS" fixed="false"/>
+        <permission name="android.permission.QUERY_ALL_PACKAGES" fixed="false"/>
+        <permission name="android.permission.READ_DEVICE_CONFIG" fixed="false"/>
+        <permission name="android.permission.SET_CLIP_SOURCE" fixed="false"/>
+        <permission name="android.permission.START_ACTIVITY_AS_CALLER" fixed="false"/>
+        <permission name="android.permission.UNLIMITED_SHORTCUTS_API_CALLS" fixed="false"/>
+        <permission name="android.permission.QUERY_CLONED_APPS" fixed="false"/>
+        <permission name="android.permission.RECEIVE_BOOT_COMPLETED" fixed="false"/>
+        <permission name="android.permission.SET_PREFERRED_APPLICATIONS" />
+    </exception>
+</exceptions>

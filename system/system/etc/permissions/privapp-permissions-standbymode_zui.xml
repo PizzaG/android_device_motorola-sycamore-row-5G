@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.lenovo.screensaver">
+    <permission name="android.permission.READ_MEDIA_IMAGES"/>
+    <permission name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED"/>
+    <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <permission name="android.permission.VIBRATE"/>
+    <permission name="android.permission.ACCESS_NETWORK_STATE" />
+    <permission name="android.permission.WAKE_LOCK" />
+    <permission name="android.permission.DEVICE_POWER" />
+    <permission name="com.lenovo.permission.ACCESS_USER_EXPERIENCE" />
+    <permission name="android.permission.WRITE_SETTINGS" />
+    <permission name="android.permission.READ_DREAM_STATE" />
+    <permission name="android.permission.WRITE_DREAM_STATE" />
+    <permission name="android.permission.CONTROL_DISPLAY_BRIGHTNESS" />
+    <permission name="com.lenovo.screensaver.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <permission name="com.google.android.gallery3d.permission.PICASA_STORE" />
+    <!--BEGIN Lenovo, qinwei8, 2024/09/26, LGSIV-4831-->
+    <permission name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <!--END Lenovo, LGSIV-4831-->
+  </privapp-permissions>
+</permissions>

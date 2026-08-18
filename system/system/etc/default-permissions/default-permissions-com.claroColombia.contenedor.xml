@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+  <exception
+    package="com.claroColombia.contenedor">
+    <permission name="android.permission.READ_PHONE_STATE" fixed="false"/>
+    <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE" fixed="false"/>
+  </exception>
+</exceptions>
+

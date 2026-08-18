@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerConfig version="20231210">
+
+    <!-- 发热先知配置项 -->
+    <OverHeat>
+        <CommonPolicy>
+            <Item name="startCleanTemp">45</Item> <!-- 大于此温度，开始检查进程耗电 -->
+            <Item name="cancelCleanTemp">42</Item> <!-- 小于此温度，结束检查进程耗电 -->
+            <Item name="timeInterval">300000</Item> <!-- 检查时间间隔，单位：ms -->
+        </CommonPolicy>
+
+        <PackagePolicy>
+            <!--    type: heat or stub
+                    bgTime: running time in background
+                    cycle:
+                    power:
+                    bigPower:-->
+            <Package name="default">
+                <Item name="type">heat</Item>
+                <Item name="bgTime">60</Item>
+                <Item name="cycle">1</Item>
+                <Item name="power">1</Item>
+                <Item name="bigPower">3</Item>
+            </Package>
+            <Package name="default">
+                <Item name="type">stub</Item>
+                <Item name="bgTime">1800</Item>
+                <Item name="cycle">3</Item>
+                <Item name="power">2</Item>
+                <Item name="bigPower">30</Item>
+            </Package>
+
+            <!-- 测试应用 -->
+            <Package name="com.example.aheat">
+                <Item name="type">heat</Item>
+                <Item name="bgTime">60</Item>
+                <Item name="cycle">1</Item>
+                <Item name="power">0.1</Item>
+                <Item name="bigPower">1</Item>
+            </Package>
+            <Package name="com.example.aheat">
+                <Item name="type">stub</Item>
+                <Item name="bgTime">600</Item>
+                <Item name="cycle">1</Item>
+                <Item name="power">0.3</Item>
+                <Item name="bigPower">3</Item>
+            </Package>
+            <Package name="com.example.bheat">
+                <Item name="type">heat</Item>
+                <Item name="bgTime">60</Item>
+                <Item name="cycle">1</Item>
+                <Item name="power">0.1</Item>
+                <Item name="bigPower">1</Item>
+            </Package>
+            <Package name="com.example.bheat">
+                <Item name="type">stub</Item>
+                <Item name="bgTime">600</Item>
+                <Item name="cycle">1</Item>
+                <Item name="power">0.3</Item>
+                <Item name="bigPower">3</Item>
+            </Package>
+
+            <Package name="com.tencent.mm">
+                <Item name="type">heat</Item>
+                <Item name="bgTime">59</Item>
+                <Item name="cycle">1</Item>
+                <Item name="power">140</Item>
+                <Item name="bigPower">300</Item>
+            </Package>
+            <Package name="com.tencent.mobileqq">
+                <Item name="type">heat</Item>
+                <Item name="bgTime">60</Item>
+                <Item name="cycle">1</Item>
+                <Item name="power">150</Item>
+                <Item name="bigPower">300</Item>
+            </Package>
+            <Package name="com.sina.weibo">
+                <Item name="type">heat</Item>
+                <Item name="bgTime">61</Item>
+                <Item name="cycle">1</Item>
+                <Item name="power">1.6</Item>
+                <Item name="bigPower">3</Item>
+            </Package>
+            <Package name="com.baidu.BaiduMap">
+                <Item name="type">heat</Item>
+                <Item name="bgTime">60</Item>
+                <Item name="cycle">1</Item>
+                <Item name="power">150</Item>
+                <Item name="bigPower">300</Item>
+            </Package>
+            <Package name="com.autonavi.minimap">
+                <Item name="type">heat</Item>
+                <Item name="bgTime">60</Item>
+                <Item name="cycle">1</Item>
+                <Item name="power">150</Item>
+                <Item name="bigPower">300</Item>
+            </Package>
+            <Package name="com.tencent.mm">
+                <Item name="type">stub</Item>
+                <Item name="bgTime">36000</Item>
+                <Item name="cycle">60</Item>
+                <Item name="power">150</Item>
+                <Item name="bigPower">2000</Item>
+            </Package>
+            <Package name="com.tencent.mobileqq">
+                <Item name="type">stub</Item>
+                <Item name="bgTime">1802</Item>
+                <Item name="cycle">3</Item>
+                <Item name="power">140</Item>
+                <Item name="bigPower">1800</Item>
+            </Package>
+            <Package name="com.sina.weibo">
+                <Item name="type">stub</Item>
+                <Item name="bgTime">1803</Item>
+                <Item name="cycle">3</Item>
+                <Item name="power">1.5</Item>
+                <Item name="bigPower">19</Item>
+            </Package>
+            <Package name="com.baidu.BaiduMap">
+                <Item name="type">stub</Item>
+                <Item name="bgTime">1802</Item>
+                <Item name="cycle">3</Item>
+                <Item name="power">140</Item>
+                <Item name="bigPower">1800</Item>
+            </Package>
+            <Package name="com.autonavi.minimap">
+                <Item name="type">stub</Item>
+                <Item name="type">stub</Item>
+                <Item name="bgTime">1802</Item>
+                <Item name="cycle">3</Item>
+                <Item name="power">140</Item>
+                <Item name="bigPower">1800</Item>
+            </Package>
+        </PackagePolicy>
+
+        <!-- 白名单应用，不kill-->
+        <!--   com.zui.game.service      ZUIS-3398    -->
+        <!--   com.lenovo.zui.datatrace  ZUIS-6386    -->
+        <WhiteListApp>
+            <Item>com.zui.game.service</Item>
+            <Item>com.lenovo.zui.datatrace</Item>
+        </WhiteListApp>
+    </OverHeat>
+
+    <!-- DeviceIdle配置项 -->
+    <DeviceIdle>
+        <WhiteListApp>
+            <Item>com.tencent.mobileqq</Item>
+            <Item>com.tencent.mm</Item>
+            <Item>com.zui.mms</Item>
+            <Item>com.zui.calendar</Item>
+            <Item>com.cttl.sendmmsbyjar</Item>
+            <Item>com.cttl.testService</Item>
+            <Item>com.lenovo.lsf</Item>
+            <Item>com.lenovo.lsf.device</Item>
+            <Item>com.zui.deskclock</Item>
+            <Item>com.lenovo.levoice.trigger</Item>
+            <Item>com.zui.ota</Item>
+            <Item>com.tblenovo.setup</Item>
+        </WhiteListApp>
+    </DeviceIdle>
+
+    <!-- 功耗均衡配置项 -->
+    <PowerBalance>
+        <AppList type="Normal">
+
+            <!--    Policy: littleMin_littleMax_littleBoost_bigMin_bigMax_bigBoost_megaMin_megaMax_megaBoost_gpuMin_gpuMax_gpuBoost-->
+
+            <!--        <App name="爱奇艺pad" pkg="com.qiyi.video.pad">-->
+            <!--            <Attribute name="Type">video</Attribute>-->
+            <!--            <Attribute name="Policy">0_26_29_0_26_30_0_7_27_-1_-1_-1</Attribute>-->
+            <!--            <ActivityList>-->
+            <!--                <Activity name="com.qiyi.video.WelcomeActivity">-->
+            <!--                    <aAttribute name="ActivityPolicy">0_0_9_0_0_9_0_0_9_-1_-1_-1</aAttribute>-->
+            <!--                </Activity>-->
+            <!--                <Activity name="org.iqiyi.video.activity.PlayerActivity">-->
+            <!--                    <aAttribute name="ActivityPolicy">0_3_9_0_3_9_0_3_9_-1_-1_-1</aAttribute>-->
+            <!--                </Activity>-->
+            <!--            </ActivityList>-->
+            <!--        </App>-->
+            <!--        <App name="微信" pkg="com.tencent.mm">-->
+            <!--            <Attribute name="Type">video</Attribute>-->
+            <!--            <Attribute name="Policy">0_26_29_0_26_30_0_7_27_-1_-1_-1</Attribute>-->
+            <!--        </App>-->
+
+        </AppList>
+    </PowerBalance>
+
+    <!-- 进程冻结配置项 -->
+    <AppFreeze>
+        <ScreenOffList>
+            <item packageName="com.kuaishou.nebula" freezeUIProcess="true"/>
+            <item packageName="com.smile.gifmaker" freezeUIProcess="true"/>
+            <item packageName="com.tencent.qqlive" freezeUIProcess="true"/>
+            <item packageName="com.ss.android.article.news" freezeUIProcess="true"/>
+            <item packageName="tv.danmaku.bili" freezeUIProcess="true"/>
+            <item packageName="com.baidu.searchbox" freezeUIProcess="true"/>
+            <item packageName="com.zui.browser" freezeUIProcess="true"/>
+            <item packageName="com.ss.android.article.lite" freezeUIProcess="true"/>
+            <item packageName="com.qiyi.video" freezeUIProcess="true"/>
+            <item packageName="com.youku.phone" freezeUIProcess="true"/>
+            <item packageName="com.ss.android.article.video" freezeUIProcess="true"/>
+            <item packageName="com.xunmeng.pinduoduo" freezeUIProcess="true"/>
+            <item packageName="com.dragon.read" freezeUIProcess="true"/>
+            <item packageName="com.UCMobile" freezeUIProcess="true"/>
+            <item packageName="com.taobao.taobao" freezeUIProcess="true"/>
+            <item packageName="com.alibaba.android.rimet" freezeUIProcess="true"/>
+            <item packageName="com.tencent.mtt" freezeUIProcess="true"/>
+            <item packageName="com.kmxs.reader" freezeUIProcess="true"/>
+            <item packageName="com.baidu.netdisk" freezeUIProcess="true"/>
+            <item packageName="com.lenovo.browser.hd" freezeUIProcess="true"/>
+            <item packageName="com.xingin.xhs" freezeUIProcess="true"/>
+            <item packageName="com.qiyi.video.pad" freezeUIProcess="true"/>
+            <item packageName="com.tencent.news" freezeUIProcess="true"/>
+        </ScreenOffList>
+
+        <ScreenOnList>
+            <item packageName="com.kuaishou.nebula" freezeUIProcess="true"/>
+            <item packageName="com.smile.gifmaker" freezeUIProcess="true"/>
+            <item packageName="com.tencent.qqlive" freezeUIProcess="true"/>
+            <item packageName="com.ss.android.article.news" freezeUIProcess="true"/>
+            <item packageName="tv.danmaku.bili" freezeUIProcess="true"/>
+            <item packageName="com.baidu.searchbox" freezeUIProcess="true"/>
+            <item packageName="com.zui.browser" freezeUIProcess="true"/>
+            <item packageName="com.ss.android.article.lite" freezeUIProcess="true"/>
+            <item packageName="com.qiyi.video" freezeUIProcess="true"/>
+            <item packageName="com.youku.phone" freezeUIProcess="true"/>
+            <item packageName="com.ss.android.article.video" freezeUIProcess="true"/>
+            <item packageName="com.xunmeng.pinduoduo" freezeUIProcess="true"/>
+            <item packageName="com.dragon.read" freezeUIProcess="true"/>
+            <item packageName="com.UCMobile" freezeUIProcess="true"/>
+            <item packageName="com.taobao.taobao" freezeUIProcess="true"/>
+            <item packageName="com.alibaba.android.rimet" freezeUIProcess="true"/>
+            <item packageName="com.tencent.mtt" freezeUIProcess="true"/>
+            <item packageName="com.kmxs.reader" freezeUIProcess="true"/>
+            <item packageName="com.baidu.netdisk" freezeUIProcess="true"/>
+            <item packageName="com.lenovo.browser.hd" freezeUIProcess="true"/>
+            <item packageName="com.xingin.xhs" freezeUIProcess="true"/>
+            <item packageName="com.qiyi.video.pad" freezeUIProcess="true"/>
+            <item packageName="com.tencent.news" freezeUIProcess="true"/>
+        </ScreenOnList>
+    </AppFreeze>
+
+</PowerConfig>

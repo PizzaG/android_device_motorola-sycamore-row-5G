@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ZuiPowerManagerConfig>
+    <CommonPolicy>
+        <WhitelistApp>
+            <Item>com.android.bluetooth</Item>
+            <Item>com.android.mtp</Item>
+            <Item>com.android.networkstack</Item>
+            <Item>com.google.android.networkstack</Item>
+            <Item>com.google.android.gms</Item>
+            <Item>com.sohu.inputmethod.sogou.oem</Item>
+        </WhitelistApp>
+    </CommonPolicy>
+
+    <WakeLockPolicy>
+        <BlackListApp>
+            <Item>com.tencent.qqmusic</Item>
+            <Item>com.smile.gifmaker</Item>
+            <Item>com.microsoft.teams</Item>
+        </BlackListApp>
+    </WakeLockPolicy>
+
+</ZuiPowerManagerConfig>

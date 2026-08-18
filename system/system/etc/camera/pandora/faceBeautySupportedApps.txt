@@ -1,0 +1,3 @@
+com.tencent.mm
+com.microsoft.teams
+us.zoom.videomeetings

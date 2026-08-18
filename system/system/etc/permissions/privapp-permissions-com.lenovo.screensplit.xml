@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 Motorola Mobility Inc.
+     All Rights Reserved.
+     Motorola Mobility Confidential Restricted.
+-->
+<permissions>
+    <privapp-permissions package="com.lenovo.screensplit">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.FORCE_STOP_PACKAGES"/>
+        <permission name="android.permission.ACCESS_HIDDEN_PROFILES"/>
+    </privapp-permissions>
+</permissions>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list>
+    <config name="remove_apk" value="Videos;GoogleKidsSpace"/>
+    <config name="language" value="fr_FR"/>
+    <config name="timezone" value="Africa/Tunis"/>
+    <config name="regional_specialty_apk" value="PlayGames"/>
+</list>

@@ -1,0 +1,26 @@
+service setsarcal /vendor/bin/setsarcal.sh
+    disabled
+    user root
+    oneshot
+
+on property:vendor.sysctl.tx=0
+    exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 0"
+
+on property:vendor.sysctl.tx=1
+    exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 1"
+
+on property:vendor.sysctl.tx=2
+    exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 2"
+
+on property:vendor.sysctl.tx=3
+    exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 3"
+
+
+on property:vendor.sysctl.tx=4
+    exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 4"
+
+on property:vendor.sysctl.tx=5
+    exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 5"
+
+on property:vendor.sysctl.tx=6
+    exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 6"

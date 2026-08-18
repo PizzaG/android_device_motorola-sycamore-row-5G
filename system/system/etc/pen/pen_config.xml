@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Debug: adb push pen_config.xml /system/etc/pen/pen_config.xml -->
+<!-- Debug: adb push dfu /system/etc/pen/dfu -->
+<!-- Please configure according to the supporting pen
+     of the actual project.  -->
+
+<penservice>
+    <market_names>
+        <!-- Sheaffer B -->
+        <market_name name="paladin">小新触控笔（第二代）</market_name>
+        <!-- Sheaffer C -->
+        <market_name name="paladin-c">小新触控笔（第二代）</market_name>
+        <!-- Picasso, PRC, Consumer -->
+        <market_name name="picasso">联想手写笔</market_name>
+        <!-- Picasso Cost Down, PRC, Consumer  -->
+        <market_name name="picasso-cd1">联想手写笔</market_name>
+
+        <!-- Picasso, PRC, Commercial-1 -->
+        <!-- <market_name name="picasso">联想启天触控笔Pro</market_name> -->
+        <!-- Picasso Cost Down, PRC, Commercial-1 -->
+        <!-- <market_name name="picasso-cd">联想启天触控笔Pro</market_name> -->
+
+        <!-- Picasso, PRC, Commercial-2 -->
+        <!-- <market_name name="picasso">联想昭阳触控笔Pro</market_name> -->
+        <!-- Picasso Cost Down, PRC, Commercial-2 -->
+        <!-- <market_name name="picasso-cd">联想昭阳触控笔Pro</market_name> -->
+
+        <!-- Parker, PRC, Consumer  -->
+        <market_name name="parker-v1">联想手写笔Pro</market_name>
+
+        <!-- Monet, PRC, Consumer  -->
+        <market_name name="monet">联想手写笔</market_name>
+
+        <!-- Picasso Cost Down, PRC, Commercial-1 -->
+        <!-- <market_name name="monet">联想启天触控笔</market_name> -->
+
+        <!-- Picasso Cost Down, PRC, Commercial-2 -->
+        <!-- <market_name name="monet">联想昭阳触控笔</market_name> -->
+    </market_names>
+    <device_names>
+        <!-- Sheaffer B -->
+        <device_name name="paladin">Lenovo Precision Pen 3</device_name>
+        <!-- Sheaffer C -->
+        <device_name name="paladin-c">Lenovo Precision Pen 3</device_name>
+        <!-- Picasso -->
+        <device_name name="picasso">Lenovo Tab Pen Plus</device_name>
+        <!-- Picasso Cost Down -->
+        <device_name name="picasso-cd1">Lenovo Tab Pen Plus</device_name>
+        <!-- Parker -->
+        <device_name name="parker-v1">Lenovo Tab Pen Pro</device_name>
+        <!-- Monet -->
+        <device_name name="monet">Lenovo Tab Pen</device_name>
+    </device_names>
+
+    <settings_default_values>
+        <!-- Quick Note -->
+        <settings_default_value name="pen_set_quick_create_click_notes">1</settings_default_value>
+        <!-- Screen Off Note -->
+        <settings_default_value name="pen_set_quick_create_screenoff_notes">1</settings_default_value>
+        <!-- Free Write -->
+        <settings_default_value name="pen_set_freewrite_on">0</settings_default_value>
+        <!-- Dynamic Palm Rejection -->
+        <settings_default_value name="pen_dynamic_palm_rejection">1</settings_default_value>
+        <!-- Pen Mode Disable UTouch  -->
+        <settings_default_value name="key_pen_mode_disable_utouch">1</settings_default_value>
+    </settings_default_values>
+    <features>
+        <!-- Easy Jot -->
+        <feature name="easy_jot">1</feature>
+        <!-- Anti-accidental Touch -->
+        <feature name="pref_key_anti_accidental_touch">1</feature>
+        <!-- Palm Rejection Custom Packages -->
+        <feature name="pen_palm_rejection_custom_packages">1</feature>
+        <!-- Dynamic Palm Rejection -->
+        <feature name="pen_dynamic_palm_rejection">1</feature>
+        <!-- Open free write by pen(Cap:Clicked, Bt:Paired(Firstly) -->
+        <feature name="pen_activate_freewrite_on">0</feature>
+    </features>
+    <dfus>
+        <![CDATA[
+        <!-- Inception -->
+        <dfu>
+            <!-- Pen firmware model -->
+            <pen-fw-model>paladin</pen-fw-model>
+            <!-- Pad TouchPanel support min pen firmware version -->
+            <min_pen_fw_version>V2.00</min_pen_fw_version>
+            <!-- Pad preset pen firmware version -->
+            <preset_pen_fw_version>V2.55</preset_pen_fw_version>
+            <!-- Pad preset pen firmware size -->
+            <preset_pen_fw_size>91,857</preset_pen_fw_size>
+            <!-- Pad preset pen firmware path -->
+            <preset_pen_fw_path>/system/etc/pen/dfu/P012_20230518_2_55_ota.zip</preset_pen_fw_path>
+        </dfu>
+        <dfu>
+            <!-- Pen firmware model -->
+            <pen-fw-model>paladin-c</pen-fw-model>
+            <!-- Pad TouchPanel support min pen firmware version -->
+            <min_pen_fw_version>V2.00</min_pen_fw_version>
+            <!-- Pad preset pen firmware version -->
+            <preset_pen_fw_version>V2.55</preset_pen_fw_version>
+            <!-- Pad preset pen firmware size -->
+            <preset_pen_fw_size>91,569</preset_pen_fw_size>
+            <!-- Pad preset pen firmware path -->
+            <preset_pen_fw_path>/system/etc/pen/dfu/P014_20230509_2_55_ota.zip</preset_pen_fw_path>
+        </dfu>
+        ]]>
+        <![CDATA[
+        <!-- Spinel -->
+        <dfu>
+            <!-- Pen firmware model -->
+            <pen-fw-model>paladin</pen-fw-model>
+            <!-- Pad TouchPanel support min pen firmware version -->
+            <min_pen_fw_version>V2.53</min_pen_fw_version>
+            <!-- Pad preset pen firmware version -->
+            <preset_pen_fw_version>V2.55</preset_pen_fw_version>
+            <!-- Pad preset pen firmware size -->
+            <preset_pen_fw_size>91,857</preset_pen_fw_size>
+            <!-- Pad preset pen firmware path -->
+            <preset_pen_fw_path>/system/etc/pen/dfu/P012_20230518_2_55_ota.zip</preset_pen_fw_path>
+        </dfu>
+        <dfu>
+            <!-- Pen firmware model -->
+            <pen-fw-model>paladin-c</pen-fw-model>
+            <!-- Pad TouchPanel support min pen firmware version -->
+            <min_pen_fw_version>V2.00</min_pen_fw_version>
+            <!-- Pad preset pen firmware version -->
+            <preset_pen_fw_version>V2.55</preset_pen_fw_version>
+            <!-- Pad preset pen firmware size -->
+            <preset_pen_fw_size>91,569</preset_pen_fw_size>
+            <!-- Pad preset pen firmware path -->
+            <preset_pen_fw_path>/system/etc/pen/dfu/P014_20230509_2_55_ota.zip</preset_pen_fw_path>
+        </dfu>
+        ]]>
+        <![CDATA[
+        <!-- Gem -->
+        <dfu>
+            <!-- Pen firmware model -->
+            <pen-fw-model>picasso</pen-fw-model>
+            <!-- Pad TouchPanel support min pen firmware version -->
+            <min_pen_fw_version>V1.18</min_pen_fw_version>
+            <!-- Pad preset pen firmware version -->
+            <preset_pen_fw_version>V1.18</preset_pen_fw_version>
+            <!-- Pad preset pen firmware size -->
+            <preset_pen_fw_size>80,415</preset_pen_fw_size>
+            <!-- Pad preset pen firmware path -->
+            <preset_pen_fw_path>/system/etc/pen/dfu/Picasso_20231122_1_18_ota.zip</preset_pen_fw_path>
+        </dfu>
+        ]]>
+    </dfus>
+    <!-- More attributes will be added later... -->
+</penservice>

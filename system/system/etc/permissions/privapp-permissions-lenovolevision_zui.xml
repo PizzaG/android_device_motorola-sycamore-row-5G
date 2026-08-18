@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.tbsmart.levision">
+    <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    <permission name="android.permission.MANAGE_USERS"/>
+    <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <permission name="android.permission.WRITE_SETTINGS"/>
+    <permission name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <permission name="android.permission.READ_EXTERNAL_STORAGE" />
+    <permission name="android.permission.FOREGROUND_SERVICE" />
+    <permission name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+    <permission name="android.permission.FOREGROUND_SERVICE_DATASYNC" />
+    <permission name="android.permission.WRITE_MEDIA_STORAGE" />
+    <permission name="android.permission.WAKE_LOCK" />
+    <permission name="android.permission.VIBRATE" />
+    <permission name="android.permission.CAMERA" />
+    <permission name="android.permission.CRYPT_KEEPER" />
+  </privapp-permissions>
+</permissions>

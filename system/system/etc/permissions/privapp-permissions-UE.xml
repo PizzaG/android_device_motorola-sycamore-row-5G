@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+
+    <privapp-permissions package="com.lenovo.ue.device">
+        <permission name="android.permission.READ_PRECISE_PHONE_STATE"/>
+        <permission name="android.permission.READ_NETWORK_USAGE_HISTORY"/>
+        <permission name="android.permission.READ_LOGS"/>
+        <permission name="android.permission.READ_DROPBOX_DATA" />
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.BATTERY_STATS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS" />
+    </privapp-permissions>
+
+</permissions>

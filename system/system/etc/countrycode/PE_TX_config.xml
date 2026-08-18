@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list>
+    <!--BarleyV code for BARLEYV-578 by qiuyan4 at 20241126 start-->
+    <config name="remove_apk" value="Moffice_ROW;MyScript_Calculator;MyScript_Nebo"/>
+    <config name="SmsEncoding7bit" value="yes"/>
+    <config name="language" value="es_US"/>
+    <config name="timezone" value="America/Lima"/>
+    <config name="regional_specialty_apk" value="AmazonMusic;AmericaMovilIgniteAgent;facebook;facebook_appmanager;facebook_installer;facebook_messenger;facebook_services;instagram;SysDLL;OneWeather;Google_Home;Google_Lens;Google_One;Google_Wallet;Claro;Google_Docs;Google_Sheets;Google_Slides"/>
+    <!--BarleyV code for BARLEYV-578 by qiuyan4 at 20241126 start-->
+</list>
+

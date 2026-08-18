@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PerformanceConfig model="LGSIV" version="20240508">
+    <!-- 需要监控的状态节点定义。
+         状态节点文件目录不固定，需要通过扫描指定目录，根据标记文件内容，找到节点所在目录
+         name : 节点名称
+         rootpath : 节点搜索的根目录
+         statefilename : 状态节点文件名
+         typefilename : 标记类型的文件名
+         typevalue : 标记字符串
+         maxdeepth : 最大搜索子目录深度 -->
+    <StateFile name = "thermal.backthermal_zone"
+        rootpath = "/sys/class/thermal"
+        statefilename = "temp"
+        typefilename="type"
+        typevalue="user_front_temp"
+        maxdeepth="1">
+    </StateFile>
+    <StateFile name = "thermal.thermal_zone"
+        rootpath = "/sys/class/thermal"
+        statefilename = "temp"
+        typefilename="type"
+        typevalue="user_front_temp"
+        maxdeepth="1">
+    </StateFile>
+
+    <!--需要设置策略的节点定义。
+        default表示设备默认值，
+        optimize表示需要策略生效时写入的值-->
+    <NodeFile type = "mpctl"
+        name = "mpctl"
+        rootpath = "/sys/devices/system/cpu/cpu0/rq-stats"
+        default = "0">
+    </NodeFile>
+    <NodeFile type = "schctl"
+        name = "schctl"
+        rootpath = "/sys/devices/system/cpu/cpu0/rq-stats"
+        default = "000">
+    </NodeFile>
+    <NodeFile type = "governor"
+        name = "cpu0freq_governor"
+        rootpath = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
+        default = "walt"
+        optimize = "performance">
+    </NodeFile>
+    <NodeFile type = "governor"
+        name = "cpu4freq_governor"
+        rootpath = "/sys/devices/system/cpu/cpu4/cpufreq/scaling_governor"
+        default = "walt"
+        optimize = "performance">
+    </NodeFile>
+    <NodeFile type = "governor"
+        name = "cpu7freq_governor"
+        rootpath = "/sys/devices/system/cpu/cpu7/cpufreq/scaling_governor"
+        default = "walt"
+        optimize = "performance">
+    </NodeFile>
+
+
+    <AvailableCPUCoreMask>
+        <CoreMask value = "0x0f" type = "LIGHT"/>
+        <CoreMask value = "0xf0" type = "HEAVY"/>
+    </AvailableCPUCoreMask>
+
+    <AvailableRefreshRateListForSettings>
+        <!-- old project, please contact zhaozh9 for patch -->
+                <!--RefreshRate value = "144" str = "144"/--><!-- 固定144Hz, 显示144Hz-->
+                <!--RefreshRate value = "120" str = "120"/--><!-- 固定120Hz, 显示120Hz-->
+                <!--RefreshRate value = "90" str = "90"/--><!-- 固定90Hz, 显示90Hz-->
+                <!--RefreshRate value = "60" str = "60"/--><!-- 固定60Hz, 显示60Hz-->
+                <!--RefreshRate value = "-1" str = "auto"/--><!-- 旧版智能刷新率, 显示智能刷新率-->
+
+        <!-- new project, no fixed refeshrate-->
+        <!--RefreshRate value = "144" str = "high" show = "144"/--><!-- 普通情况下 top 144, 显示极致高刷-->
+        <!--RefreshRate value = "120" str = "medium" show = "120"/--><!-- 普通情况下 top 120, 显示智能高刷-->
+        <!--RefreshRate value = "60" str = "low" show = "60"/--><!-- 普通情况下 top 60，显示普通刷新率-->
+    </AvailableRefreshRateListForSettings>
+
+    <!-- settings below this rate, does not support high refresh -->
+    <SupportHighRefreshLowestRate>120</SupportHighRefreshLowestRate>
+    <!-- high refresh apps apply this refresh rate -->
+    <HighRefreshRateForUserSettingWhiteList>144</HighRefreshRateForUserSettingWhiteList>
+
+    <!-- when user set this for settings rate, some competitive games apply high refresh rate -->
+    <SupportHighRefreshGameSettingsRate>144</SupportHighRefreshGameSettingsRate>
+    <!-- some competitive games apply this rate when supportHignRefreshGameSettingsRate is on -->
+    <HighRefreshRateForCompetitiveGames>144</HighRefreshRateForCompetitiveGames>
+    <!-- white list of competitive games which apply high refresh rate -->
+    <CompetitiveGameList>
+        <Game pkg = "com.tencent.tmgp.pubgmhd"/>
+    </CompetitiveGameList>
+
+    <AvailableRefreshRateList>
+        <RefreshRate value = "144"/>
+        <RefreshRate value = "120"/>
+        <RefreshRate value = "60"/>
+    </AvailableRefreshRateList>
+    <PowerSaveLowRefreshRate>30</PowerSaveLowRefreshRate>
+
+    <PerformanceTypeList>
+        <Item name = "Full">
+            <PerfLockConfig code = "0x40800100" param = "1804800"/><!--minLittleCore-->
+            <PerfLockConfig code = "0x40800000" param = "2745600"/><!--minBigCore-->
+            <PerfLockConfig code = "0x40800200" param = "3187200"/><!--minMegaCore-->
+            <PerfLockConfig code = "0x4280C000" param = "900000"/><!--minGPUFreq-->
+            <PerfLockConfig code = "0x42804000" param = "0"/><!--minPowerLevel-->
+            <PerfLockConfig code = "0x41844000" param = "806000"/><!--qcom_LLCC-->
+            <PerfLockConfig code = "0x4303C000" param = "2092000"/><!--qcom_DDR-->
+            <PerfLockConfig code = "0x43458000" param = "1651200"/><!--qcom_L3PRIME-->
+            <PerfLockConfig code = "0x4345C000" param = "600000"/><!--qcom_LLCCSILVER-->
+            <PerfLockConfig code = "0x43460000" param = "1555000"/><!--qcom_DDRSILVER-->
+            <PerfLockConfig code = "0x40CFC000" param = "0"/><!--qcom_PERFMODE1-->
+            <PerfLockConfig code = "0x40CA4000" param = "2"/><!--qcom_PERFMODE2-->
+            <PerfLockConfig code = "0x40C74000" param = "255"/><!--qcom_PERFMODE3-->
+            <PerfLockConfig code = "0x40408000" param = "99"/><!--qcom_PERFMODE4-->
+            <PerfLockConfig code = "0x42C1C000" param = "1"/><!--qcom_PERFMODE5-->
+            <PerfLockConfig code = "0x40C00000" param = "3"/><!--qcom_SCHEDBOOST-->
+            <PerfLockConfig code = "0x40CAC000" param = "100"/><!--schedboost-->
+        </Item>
+        <Item name = "LowPower">
+            <PerfLockConfig code = "0x40804100" param = "1363200"/><!--maxLittleCore-->
+            <PerfLockConfig code = "0x40804000" param = "1324800"/><!--maxBigCore-->
+            <PerfLockConfig code = "0x40804200" param = "1401600"/><!--maxMegaCore-->
+        </Item>
+    </PerformanceTypeList>
+
+    <PerformanceSpecialList>
+        <Item name = "SavageBoost">
+            <PerfLockConfig code = "0x40CAC000" param = "100"/><!--schedboost-->
+        </Item>
+        <Item name = "SavageBoostV1">
+            <PerfLockConfig code = "0x40CAC000" param = "100"/><!--schedboost-->
+        </Item>
+        <Item name = "SavageBoostV2">
+            <PerfLockConfig code = "0x40CAC000" param = "100"/><!--schedboost-->
+        </Item>
+        <Item name = "GameBoost">
+            <PerfLockConfig code = "0x40CAC000" param = "50"/><!--schedboost-->
+        </Item>
+        <Item name = "GameBoostV1">
+            <PerfLockConfig code = "0x40CAC000" param = "50"/><!--schedboost-->
+        </Item>
+        <Item name = "GameBoostV2">
+            <PerfLockConfig code = "0x40CAC000" param = "50"/><!--schedboost-->
+        </Item>
+    </PerformanceSpecialList>
+
+    <!-- available freq -->
+    <!-- little cpu0 ~ cpu3 :                                                                                                                                                 1800000 1700000 1600000 1500000 1450000 1400000 1350000 1-1 1250000 1200000 1150000 1100000 1050000 1000000 950000 900000 850000 800000 750000 700000 650000 600000 550000 500000 450000 400000 350000 -1 250000 200000 -->
+    <!-- big    cpu4 ~ cpu6 :                         2850000 2750000 2650000 2550000 2450000 2400000 2350000 2-1 2250000 2200000 2150000 2100000 2050000 2000000 1900000 1800000 1700000 1600000 1500000 1400000 1-1 1200000 1100000 1000000 900000 800000 700000 600000 500000 400000 -->
+    <!-- mega    cpu7       : 3050000 -10 2900000 2850000 2800000 2750000 2700000 2650000 2600000 2550000 2500000 2450000 2400000 2350000 2-1 2250000 2200000 2150000 2100000 2050000 2000000 1900000 1800000 1700000 1600000 1500000 1400000 1-1-->
+    <!-- gpu                : 880000 800000 610000 430000 350000 (0-4) -->
+
+    <!-- available freq -->
+    <!-- gpu : 670000 587000 525000 490000 441600 400000 305000 -->
+
+    <GameLimitConfig>
+        <Type name = "TempLevel">
+            <Temp level ="0">default</Temp>
+            <!-- othergame defaultMode -->
+            <Temp level ="-41">37</Temp>
+            <Temp level ="-42">39</Temp>
+            <Temp level ="-43">41</Temp>
+            <!-- othergame powersaveMode -->
+            <Temp level ="-21">39</Temp>
+            <Temp level ="-22">41</Temp>
+            <!-- othergame savageMode -->
+            <Temp level ="-11">35</Temp>
+            <Temp level ="-12">37</Temp>
+            <Temp level ="-13">39</Temp>
+            <!-- yuanshen defaultMode -->
+            <Temp level ="2">38</Temp>
+            <Temp level ="3">40</Temp>
+            <Temp level ="4">42</Temp>
+            <!-- yuanshen powersaveMode -->
+            <Temp level ="5">39</Temp>
+            <!-- yuanshen savageMode -->
+            <Temp level ="8">42</Temp>
+            <Temp level ="9">44</Temp>
+            <Temp level ="10">46</Temp>
+            <!-- sgame gameMode -->
+            <Temp level ="12">39</Temp>
+            <Temp level ="13">40</Temp>
+            <Temp level ="14">42</Temp>
+            <!-- sgame powersaveMode -->
+            <Temp level = "16">39</Temp>
+            <Temp level = "17">41</Temp>
+            <!-- sgame savageMode -->
+            <Temp level = "20">42</Temp>
+            <Temp level = "21">45</Temp>
+            <Temp level = "22">48</Temp>
+            <!-- tmgp powersaveMode -->
+            <Temp level = "24">39</Temp>
+            <Temp level = "25">41</Temp>
+            <!-- tmgp savageMode -->
+            <Temp level = "28">42</Temp>
+            <Temp level = "29">45</Temp>
+            <Temp level = "30">48</Temp>
+            <!-- tmgp gameMode -->
+            <Temp level = "32">37</Temp>
+            <Temp level = "33">40</Temp>
+            <Temp level = "34">42</Temp>
+            <!-- lol gameMode -->
+            <Temp level = "42">37</Temp>
+            <Temp level = "43">40</Temp>
+            <Temp level = "44">43</Temp>
+            <!-- lol powersaveMode -->
+            <Temp level = "46">39</Temp>
+            <Temp level = "47">41</Temp>
+            <!-- lol savageMode -->
+            <Temp level = "49">42</Temp>
+            <Temp level = "50">45</Temp>
+            <Temp level = "51">48</Temp>
+            <!-- bright ridge gameMode -->
+            <Temp level = "53">36</Temp>
+            <Temp level = "54">39</Temp>
+            <Temp level = "55">41</Temp>
+            <!-- bright ridge powersaveMode -->
+            <Temp level = "57">39</Temp>
+            <Temp level = "58">41</Temp>
+            <!-- bright ridge savageMode -->
+            <Temp level = "60">36</Temp>
+            <Temp level = "61">41</Temp>
+            <Temp level = "62">48</Temp>
+        </Type>
+        <Type name = "LittleCore">
+            <!-- othergame defaultMode -->
+            <Freq level = "-4">-1_-1_-1</Freq>
+            <Freq level = "-41">-1_-1_-1</Freq>
+            <Freq level = "-42">-1_-1_-1</Freq>
+            <Freq level = "-43">-1_-1_-1</Freq>
+            <!-- othergame powersaveMode -->
+            <Freq level = "-2">-1_-1_-1</Freq>
+            <Freq level = "-21">-1_-1_-1</Freq>
+            <Freq level = "-22">-1_-1_-1</Freq>
+            <!-- othergame savageMode -->
+            <Freq level = "-1">-1_-1_-1</Freq>
+            <Freq level = "-11">-1_-1_-1</Freq>
+            <Freq level = "-12">-1_-1_-1</Freq>
+            <Freq level = "-13">-1_-1_-1</Freq>
+            <!-- device default -->
+            <Freq level = "0">-1_-1_-1</Freq>
+            <!-- yuanshen gameMode -->
+            <Freq level = "1">-1_-1_-1</Freq>
+            <Freq level = "2">-1_-1_-1</Freq>
+            <Freq level = "3">-1_-1_-1</Freq>
+            <Freq level = "4">-1_-1_-1</Freq>
+            <!-- yuanshen powersaveMode -->
+            <Freq level = "5">-1_-1_-1</Freq>
+            <!-- yuanshen savageMode -->
+            <Freq level = "7">-1_-1_-1</Freq>
+            <Freq level = "8">-1_-1_-1</Freq>
+            <Freq level = "9">-1_-1_-1</Freq>
+            <Freq level = "10">-1_-1_-1</Freq>
+            <!-- sgame gameMode -->
+            <Freq level = "11">-1_-1_-1</Freq>
+            <Freq level = "12">-1_-1_-1</Freq>
+            <Freq level = "13">-1_-1_-1</Freq>
+            <Freq level = "14">-1_-1_-1</Freq>
+            <!-- sgame powersaveMode -->
+            <Freq level = "15">-1_-1_-1</Freq>
+            <Freq level = "16">-1_-1_-1</Freq>
+            <Freq level = "17">-1_-1_-1</Freq>
+            <!-- sgame savageMode -->
+            <Freq level = "19">-1_-1_-1</Freq>
+            <Freq level = "20">-1_-1_-1</Freq>
+            <Freq level = "21">-1_-1_-1</Freq>
+            <Freq level = "22">-1_-1_-1</Freq>
+            <!-- tmgp powersaveMode -->
+            <Freq level = "23">-1_-1_-1</Freq>
+            <Freq level = "24">-1_-1_-1</Freq>
+            <Freq level = "25">-1_-1_-1</Freq>
+            <!-- tmgp savageMode -->
+            <Freq level = "27">-1_-1_-1</Freq>
+            <Freq level = "28">-1_-1_-1</Freq>
+            <Freq level = "29">-1_-1_-1</Freq>
+            <Freq level = "30">-1_-1_-1</Freq>
+            <!-- tmgp gameMode -->
+            <Freq level = "31">-1_-1_-1</Freq>
+            <Freq level = "32">-1_-1_-1</Freq>
+            <Freq level = "33">-1_-1_-1</Freq>
+            <Freq level = "34">-1_-1_-1</Freq>
+            <!-- lol gameMode -->
+            <Freq level = "41">-1_-1_-1</Freq>
+            <Freq level = "42">-1_-1_-1</Freq>
+            <Freq level = "43">-1_-1_-1</Freq>
+            <Freq level = "44">-1_-1_-1</Freq>
+            <!-- lol powersaveMode -->
+            <Freq level = "45">-1_-1_-1</Freq>
+            <Freq level = "46">-1_-1_-1</Freq>
+            <Freq level = "47">-1_-1_-1</Freq>
+            <!-- lol savageMode -->
+            <Freq level = "48">-1_-1_-1</Freq>
+            <Freq level = "49">-1_-1_-1</Freq>
+            <Freq level = "50">-1_-1_-1</Freq>
+            <Freq level = "51">-1_-1_-1</Freq>
+            <!-- bright mountain gameMode -->
+            <Freq level = "52">-1_-1_-1</Freq>
+            <Freq level = "53">-1_-1_-1</Freq>
+            <Freq level = "54">-1_-1_-1</Freq>
+            <Freq level = "55">-1_-1_-1</Freq>
+            <!-- bright ridge powersaveMode -->
+            <Freq level = "56">-1_-1_-1</Freq>
+            <Freq level = "57">-1_-1_-1</Freq>
+            <Freq level = "58">-1_-1_-1</Freq>
+            <!-- bright ridge savageMode -->
+            <Freq level = "59">-1_-1_-1</Freq>
+            <Freq level = "60">-1_-1_-1</Freq>
+            <Freq level = "61">-1_-1_-1</Freq>
+            <Freq level = "62">-1_-1_-1</Freq>
+        </Type>
+        <Type name = "BigCore">
+            <!-- othergame defaultMode -->
+            <Freq level = "-4">-1_-1_-1</Freq>
+            <Freq level = "-41">-1_-1_-1</Freq>
+            <Freq level = "-42">-1_-1_-1</Freq>
+            <Freq level = "-43">-1_-1_-1</Freq>
+            <!-- othergame powersaveMode -->
+            <Freq level = "-2">-1_-1_-1</Freq>
+            <Freq level = "-21">-1_-1_-1</Freq>
+            <Freq level = "-22">-1_-1_-1</Freq>
+            <!-- othergame savageMode -->
+            <Freq level = "-1">-1_-1_-1</Freq>
+            <Freq level = "-11">-1_-1_-1</Freq>
+            <Freq level = "-12">-1_-1_-1</Freq>
+            <Freq level = "-13">-1_-1_-1</Freq>
+            <!-- device default -->
+            <Freq level = "0">-1_-1_-1</Freq>
+            <!-- yuanshen gameMode -->
+            <Freq level = "1">-1_-1_-1</Freq>
+            <Freq level = "2">-1_-1_-1</Freq>
+            <Freq level = "3">-1_-1_-1</Freq>
+            <Freq level = "4">-1_-1_-1</Freq>
+            <!-- yuanshen powersaveMode -->
+            <Freq level = "5">-1_-1_-1</Freq>
+            <!-- yuanshen savageMode -->
+            <Freq level = "7">-1_-1_-1</Freq>
+            <Freq level = "8">-1_-1_-1</Freq>
+            <Freq level = "9">-1_-1_-1</Freq>
+            <Freq level = "10">-1_-1_-1</Freq>
+            <!-- sgame gameMode -->
+            <Freq level = "11">-1_-1_-1</Freq>
+            <Freq level = "12">-1_-1_-1</Freq>
+            <Freq level = "13">-1_-1_-1</Freq>
+            <Freq level = "14">-1_-1_-1</Freq>
+            <!-- sgame powersaveMode -->
+            <Freq level = "15">-1_-1_-1</Freq>
+            <Freq level = "16">-1_-1_-1</Freq>
+            <Freq level = "17">-1_-1_-1</Freq>
+            <!-- sgame savageMode -->
+            <Freq level = "19">-1_-1_-1</Freq>
+            <Freq level = "20">-1_-1_-1</Freq>
+            <Freq level = "21">-1_-1_-1</Freq>
+            <Freq level = "22">-1_-1_-1</Freq>
+            <!-- tmgp powersaveMode -->
+            <Freq level = "23">-1_-1_-1</Freq>
+            <Freq level = "24">-1_-1_-1</Freq>
+            <Freq level = "25">-1_-1_-1</Freq>
+            <!-- tmgp savageMode -->
+            <Freq level = "27">-1_-1_-1</Freq>
+            <Freq level = "28">-1_-1_-1</Freq>
+            <Freq level = "29">-1_-1_-1</Freq>
+            <Freq level = "30">-1_-1_-1</Freq>
+            <!-- tmgp gameMode -->
+            <Freq level = "31">-1_-1_-1</Freq>
+            <Freq level = "32">-1_-1_-1</Freq>
+            <Freq level = "33">-1_-1_-1</Freq>
+            <Freq level = "34">-1_-1_-1</Freq>
+            <!-- lol gameMode -->
+            <Freq level = "41">-1_-1_-1</Freq>
+            <Freq level = "42">-1_-1_-1</Freq>
+            <Freq level = "43">-1_-1_-1</Freq>
+            <Freq level = "44">-1_-1_-1</Freq>
+            <!-- lol powersaveMode -->
+            <Freq level = "45">-1_-1_-1</Freq>
+            <Freq level = "46">-1_-1_-1</Freq>
+            <Freq level = "47">-1_-1_-1</Freq>
+            <!-- lol savageMode -->
+            <Freq level = "48">-1_-1_-1</Freq>
+            <Freq level = "49">-1_-1_-1</Freq>
+            <Freq level = "50">-1_-1_-1</Freq>
+            <Freq level = "51">-1_-1_-1</Freq>
+            <!-- bright ridge gameMode -->
+            <Freq level = "52">-1_-1_-1</Freq>
+            <Freq level = "53">-1_-1_-1</Freq>
+            <Freq level = "54">-1_-1_-1</Freq>
+            <Freq level = "55">-1_-1_-1</Freq>
+            <!-- bright ridge powersaveMode -->
+            <Freq level = "56">-1_-1_-1</Freq>
+            <Freq level = "57">-1_-1_-1</Freq>
+            <Freq level = "58">-1_-1_-1</Freq>
+            <!-- bright ridge savageMode -->
+            <Freq level = "59">-1_-1_-1</Freq>
+            <Freq level = "60">-1_-1_-1</Freq>
+            <Freq level = "61">-1_-1_-1</Freq>
+            <Freq level = "62">-1_-1_-1</Freq>
+        </Type>
+        <Type name = "MegaCore">
+            <!-- othergame defaultMode -->
+            <Freq level = "-4">-1_-1_-1</Freq>
+            <Freq level = "-41">-1_-1_-1</Freq>
+            <Freq level = "-42">-1_-1_-1</Freq>
+            <Freq level = "-43">-1_-1_-1</Freq>
+            <!-- othergame powersaveMode -->
+            <Freq level = "-2">-1_-1_-1</Freq>
+            <Freq level = "-21">-1_-1_-1</Freq>
+            <Freq level = "-22">-1_-1_-1</Freq>
+            <!-- othergame savageMode -->
+            <Freq level = "-1">-1_-1_-1</Freq>
+            <Freq level = "-11">-1_-1_-1</Freq>
+            <Freq level = "-12">-1_-1_-1</Freq>
+            <Freq level = "-13">-1_-1_-1</Freq>
+            <!-- device default -->
+            <Freq level = "0">-1_-1_-1</Freq>
+            <!-- yuanshen gameMode -->
+            <Freq level = "1">-1_-1_-1</Freq>
+            <Freq level = "2">-1_-1_-1</Freq>
+            <Freq level = "3">-1_-1_-1</Freq>
+            <Freq level = "4">-1_-1_-1</Freq>
+            <!-- yuanshen powersaveMode -->
+            <Freq level = "5">-1_-1_-1</Freq>
+            <!-- yuanshen savageMode -->
+            <Freq level = "7">-1_-1_-1</Freq>
+            <Freq level = "8">-1_-1_-1</Freq>
+            <Freq level = "9">-1_-1_-1</Freq>
+            <Freq level = "10">-1_-1_-1</Freq>
+            <!-- sgame gameMode -->
+            <Freq level = "11">-1_-1_-1</Freq>
+            <Freq level = "12">-1_-1_-1</Freq>
+            <Freq level = "13">-1_-1_-1</Freq>
+            <Freq level = "14">-1_-1_-1</Freq>
+            <!-- sgame powersaveMode -->
+            <Freq level = "15">-1_-1_-1</Freq>
+            <Freq level = "16">-1_-1_-1</Freq>
+            <Freq level = "17">-1_-1_-1</Freq>
+            <!-- sgame savageMode -->
+            <Freq level = "19">-1_-1_-1</Freq>
+            <Freq level = "20">-1_-1_-1</Freq>
+            <Freq level = "21">-1_-1_-1</Freq>
+            <Freq level = "22">-1_-1_-1</Freq>
+            <!-- tmgp powersaveMode -->
+            <Freq level = "23">-1_-1_-1</Freq>
+            <Freq level = "24">-1_-1_-1</Freq>
+            <Freq level = "25">-1_-1_-1</Freq>
+            <!-- tmgp savageMode -->
+            <Freq level = "27">-1_-1_-1</Freq>
+            <Freq level = "28">-1_-1_-1</Freq>
+            <Freq level = "29">-1_-1_-1</Freq>
+            <Freq level = "30">-1_-1_-1</Freq>
+            <!-- tmgp gameMode -->
+            <Freq level = "31">-1_-1_-1</Freq>
+            <Freq level = "32">-1_-1_-1</Freq>
+            <Freq level = "33">-1_-1_-1</Freq>
+            <Freq level = "34">-1_-1_-1</Freq>
+            <!-- lol gameMode -->
+            <Freq level = "41">-1_-1_-1</Freq>
+            <Freq level = "42">-1_-1_-1</Freq>
+            <Freq level = "43">-1_-1_-1</Freq>
+            <Freq level = "44">-1_-1_-1</Freq>
+            <!-- lol powersaveMode -->
+            <Freq level = "45">-1_-1_-1</Freq>
+            <Freq level = "46">-1_-1_-1</Freq>
+            <Freq level = "47">-1_-1_-1</Freq>
+            <!-- lol savageMode -->
+            <Freq level = "48">-1_-1_-1</Freq>
+            <Freq level = "49">-1_-1_-1</Freq>
+            <Freq level = "50">-1_-1_-1</Freq>
+            <Freq level = "51">-1_-1_-1</Freq>
+            <!-- bright ridge gameMode -->
+            <Freq level = "52">-1_-1_-1</Freq>
+            <Freq level = "53">-1_-1_-1</Freq>
+            <Freq level = "54">-1_-1_-1</Freq>
+            <Freq level = "55">-1_-1_-1</Freq>
+            <!-- bright ridge powersaveMode -->
+            <Freq level = "56">-1_-1_-1</Freq>
+            <Freq level = "57">-1_-1_-1</Freq>
+            <Freq level = "58">-1_-1_-1</Freq>
+            <!-- bright ridge savageMode -->
+            <Freq level = "59">-1_-1_-1</Freq>
+            <Freq level = "60">-1_-1_-1</Freq>
+            <Freq level = "61">-1_-1_-1</Freq>
+            <Freq level = "62">-1_-1_-1</Freq>
+        </Type>
+        <Type name = "GPU">
+            <!-- othergame defaultMode -->
+            <Freq level = "-4">-1_-1_-1</Freq>
+            <Freq level = "-41">-1_-1_-1</Freq>
+            <Freq level = "-42">-1_-1_-1</Freq>
+            <Freq level = "-43">-1_-1_-1</Freq>
+            <!-- othergame powersaveMode -->
+            <Freq level = "-2">-1_-1_-1</Freq>
+            <Freq level = "-21">-1_-1_-1</Freq>
+            <Freq level = "-22">-1_-1_-1</Freq>
+            <!-- othergame savageMode -->
+            <Freq level = "-1">-1_-1_-1</Freq>
+            <Freq level = "-11">-1_-1_-1</Freq>
+            <Freq level = "-12">-1_-1_-1</Freq>
+            <Freq level = "-13">-1_-1_-1</Freq>
+            <!-- device default -->
+            <Freq level = "0">-1_-1_-1</Freq>
+            <!-- yuanshen gameMode -->
+            <Freq level = "1">-1_-1_-1</Freq>
+            <Freq level = "2">-1_-1_-1</Freq>
+            <Freq level = "3">-1_-1_-1</Freq>
+            <Freq level = "4">-1_-1_-1</Freq>
+            <!-- yuanshen powersaveMode -->
+            <Freq level = "5">-1_-1_-1</Freq>
+            <!-- yuanshen savageMode -->
+            <Freq level = "7">-1_-1_-1</Freq>
+            <Freq level = "8">-1_-1_-1</Freq>
+            <Freq level = "9">-1_-1_-1</Freq>
+            <Freq level = "10">-1_-1_-1</Freq>
+            <!-- sgame gameMode -->
+            <Freq level = "11">-1_-1_-1</Freq>
+            <Freq level = "12">-1_-1_-1</Freq>
+            <Freq level = "13">-1_-1_-1</Freq>
+            <Freq level = "14">-1_-1_-1</Freq>
+            <!-- sgame powersaveMode -->
+            <Freq level = "15">-1_-1_-1</Freq>
+            <Freq level = "16">-1_-1_-1</Freq>
+            <Freq level = "17">-1_-1_-1</Freq>
+            <!-- sgame savageMode -->
+            <Freq level = "19">-1_-1_-1</Freq>
+            <Freq level = "20">-1_-1_-1</Freq>
+            <Freq level = "21">-1_-1_-1</Freq>
+            <Freq level = "22">-1_-1_-1</Freq>
+            <!-- tmgp powersaveMode -->
+            <Freq level = "23">-1_-1_-1</Freq>
+            <Freq level = "24">-1_-1_-1</Freq>
+            <Freq level = "25">-1_-1_-1</Freq>
+            <!-- tmgp savageMode -->
+            <Freq level = "27">-1_-1_-1</Freq>
+            <Freq level = "28">-1_-1_-1</Freq>
+            <Freq level = "29">-1_-1_-1</Freq>
+            <Freq level = "30">-1_-1_-1</Freq>
+            <!-- tmgp gameMode -->
+            <Freq level = "31">-1_-1_-1</Freq>
+            <Freq level = "32">-1_-1_-1</Freq>
+            <Freq level = "33">-1_-1_-1</Freq>
+            <Freq level = "34">-1_-1_-1</Freq>
+            <!-- lol gameMode -->
+            <Freq level = "41">-1_-1_-1</Freq>
+            <Freq level = "42">-1_-1_-1</Freq>
+            <Freq level = "43">-1_-1_-1</Freq>
+            <Freq level = "44">-1_-1_-1</Freq>
+            <!-- lol powersaveMode -->
+            <Freq level = "45">-1_-1_-1</Freq>
+            <Freq level = "46">-1_-1_-1</Freq>
+            <Freq level = "47">-1_-1_-1</Freq>
+            <!-- lol savageMode -->
+            <Freq level = "48">-1_-1_-1</Freq>
+            <Freq level = "49">-1_-1_-1</Freq>
+            <Freq level = "50">-1_-1_-1</Freq>
+            <Freq level = "51">-1_-1_-1</Freq>
+            <!-- bright ridge gameMode -->
+            <Freq level = "52">-1_-1_-1</Freq>
+            <Freq level = "53">-1_-1_-1</Freq>
+            <Freq level = "54">-1_-1_-1</Freq>
+            <Freq level = "55">-1_-1_-1</Freq>
+            <!-- bright ridge powersaveMode -->
+            <Freq level = "56">-1_-1_-1</Freq>
+            <Freq level = "57">-1_-1_-1</Freq>
+            <Freq level = "58">-1_-1_-1</Freq>
+            <!-- bright ridge savageMode -->
+            <Freq level = "59">-1_-1_-1</Freq>
+            <Freq level = "60">-1_-1_-1</Freq>
+            <Freq level = "61">-1_-1_-1</Freq>
+            <Freq level = "62">-1_-1_-1</Freq>
+        </Type>
+    </GameLimitConfig>
+
+    <ThermalConfigMode>4</ThermalConfigMode> <!--1 for perflock, 2 for mpctl former devices, 3 for thermal engine, 4 for HIDL-->
+    <ThermalPerfLockCode>0x03000000</ThermalPerfLockCode><!-- if ThermalConfigMode == 1, ensure this is initialized-->
+
+    <RefreshRateDefault>120</RefreshRateDefault>
+
+    <LowRefreshRate>60</LowRefreshRate>
+
+    <HighRefreshRate>120</HighRefreshRate>
+
+    <InnerRefreshRateEnabled>True</InnerRefreshRateEnabled>
+
+    <RefreshRateSettingsDefault>120</RefreshRateSettingsDefault>
+
+    <LowRefreshApps>
+    </LowRefreshApps>
+
+    <TargetGameApps>
+    </TargetGameApps>
+
+    <AppConfig>
+        <BindCoreItem name = "Yuanshen">
+            <pCommValue>Yuanshen,toStch</pCommValue>
+            <tCommValue>Worker Thread</tCommValue>
+            <delayMillis>5</delayMillis>
+            <mask>f0</mask>
+            <loopFrameCount>0</loopFrameCount>
+        </BindCoreItem>
+        <BindCoreItem name = "LuDaShi">
+            <pCommValue>shi.benchmark2</pCommValue>
+            <tCommValue>benchmark2,Render Thread</tCommValue>
+            <delayMillis>300</delayMillis>
+            <mask>0f</mask>
+            <loopFrameCount>0</loopFrameCount>
+        </BindCoreItem>
+        <BindCoreItem name = "pubg">
+            <pCommValue>MainThread-UE4,tmgp.pubg</pCommValue>
+            <tCommValue>MainThread-UE4,TaskGraphNP,PoolThread,FAsyncLoading,RenderThread</tCommValue>
+            <delayMillis>8000</delayMillis>
+            <mask>f0</mask>
+            <loopFrameCount>0</loopFrameCount>
+        </BindCoreItem>
+        <BindCoreItem name = "UnityMain">
+            <pCommValue>UnityMain</pCommValue>
+            <tCommValue>Worker Thread,Job Worker</tCommValue>
+            <delayMillis>8000</delayMillis>
+            <mask>f0</mask>
+            <loopFrameCount>0</loopFrameCount>
+        </BindCoreItem>
+        <BindCoreItem name = "HuYa">
+            <pCommValue>duawan kiwi</pCommValue>
+            <tCommValue>[HY] HYMedia,KT RxComputa</tCommValue>
+            <delayMillis>10000</delayMillis>
+            <mask>0f</mask>
+            <loopFrameCount>1000</loopFrameCount>
+        </BindCoreItem>
+        <BindCoreItem name = "DouYin">
+            <pCommValue>ugc.aweme</pCommValue>
+            <tCommValue>pop view thread,Render Thread</tCommValue>
+            <delayMillis>10000</delayMillis>
+            <mask>0f</mask>
+            <loopFrameCount>1000</loopFrameCount>
+        </BindCoreItem>
+        <BindCoreItem name = "JkChess">
+            <pCommValue>jkchess</pCommValue>
+            <tCommValue>Job Worker, UnityMain</tCommValue>
+            <delayMillis>5</delayMillis>
+            <mask>f0</mask>
+            <loopFrameCount>0</loopFrameCount>
+        </BindCoreItem>
+    </AppConfig>
+</PerformanceConfig>

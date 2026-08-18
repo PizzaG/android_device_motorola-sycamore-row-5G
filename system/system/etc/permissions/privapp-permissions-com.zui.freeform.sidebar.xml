@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+
+    <privapp-permissions package="com.zui.freeform.sidebar">
+        <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+        <permission name="android.permission.RECEIVE_BOOT_COMPLETED" />
+        <permission name="android.permission.INTERACT_ACROSS_USERS" />
+        <permission name="zui.permission.OVFREEFORM_CLIENT" />
+        <permission name="android.permission.SYSTEM_ALERT_WINDOW" />
+    </privapp-permissions>
+
+</permissions>

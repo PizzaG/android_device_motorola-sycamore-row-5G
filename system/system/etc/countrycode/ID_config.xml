@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list>
+<!-- SYCAMORE code for SYCAMORE-23963 by liaowl4 at 20250610 start -->
+    <config name="language" value="id-ID"/>
+    <config name="timezone" value="Asia/Jakarta"/>
+    <config name="regional_specialty_apk" value="PlayGames"/>
+<!-- SYCAMORE code for SYCAMORE-23963 by liaowl4 at 20250610 end -->
+</list>
