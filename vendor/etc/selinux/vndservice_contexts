@@ -1,0 +1,13 @@
+#line 1 "system/sepolicy/vendor/vndservice_contexts"
+manager                 u:object_r:service_manager_vndservice:s0
+*                       u:object_r:default_android_vndservice:s0
+#line 1 "lenovo/lgsi/vendor/sepolicy/by_prj/sepolicy/vndservice_contexts"
+vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemon u:object_r:goodix_fingerprint_vndservice:s0
+vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemonExt u:object_r:goodix_fingerprint_vndservice:s0
+
+#line 1 "device/mediatek/sepolicy/base/vendor/vndservice_contexts"
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+android.IRemosaicDaemon u:object_r:remosaic_daemon_service:s0

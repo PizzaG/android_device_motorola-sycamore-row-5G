@@ -1,0 +1,11 @@
+on post-fs-data
+    chown system system /dev/ttyS1
+    chmod 0660 /dev/ttyS1
+    chown system system /sys/devices/platform/soc/soc:lenovo_kb/keyboard_status
+    chmod 0660 /sys/devices/platform/soc/soc:lenovo_kb/keyboard_status
+
+service keyboard_hal_service /vendor/bin/hw/vendor.lenovo.hardware.keyboard-service
+    interface aidl vendor.lenovo.hardware.keyboard.IKeyboard/default
+    class hal
+    user system
+    group system

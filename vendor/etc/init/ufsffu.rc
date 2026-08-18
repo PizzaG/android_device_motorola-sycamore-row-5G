@@ -1,0 +1,6 @@
+service ufsffu /vendor/bin/ufsffu
+    class main
+    user root
+    group root system
+    oneshot
+

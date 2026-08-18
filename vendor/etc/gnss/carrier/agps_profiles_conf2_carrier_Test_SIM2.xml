@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mtk_agps_profiles maj_ver="1" min_ver="2">
+  <!-- Refer to agps_profiles_conf2.xml for values not provided in this file -->
+
+  <cur_supl_profile name="Test_SIM2"
+      addr=""
+      port="7275"
+      tls="true"
+  />
+
+  <!--SycamoreTMO code for SCMTMO-2540 by luotian2 at 2025/12/19 start-->
+  <up_setting
+    imsi_enable="true"
+    ut_connection="20"
+    cert_from_sdcard="true"
+  />
+  <!--SycamoreTMO code for SCMTMO-2540 by luotian2 at 2025/12/19 end-->
+
+</mtk_agps_profiles>

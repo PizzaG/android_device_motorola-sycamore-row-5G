@@ -1,0 +1,7 @@
+service touch_boost /vendor/bin/touch_boost
+    class main
+    user system
+    group system readproc wifi media media_rw camera audio
+
+on boot
+    start touch_boost

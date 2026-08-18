@@ -1,0 +1,42 @@
+service vendor.dynamicdata /vendor/bin/dynamicdata
+	priority -20
+	user root
+	group root system
+	oneshot
+	disabled
+
+on early-init
+	wait /dev/block/by-name/userdata
+	write /proc/bootprof "INIT:on early-init vendor.dynamicdata start"
+	exec_start vendor.dynamicdata
+	write /proc/bootprof "INIT:on early-init vendor.dynamicdata end"
+
+on fs && property:vendor.storage.dynamicdata.type=userdata
+# Sycamore code for SYCAMORE-1242 by zhourh6 at 2024.12.7 start
+	mount_all /vendor/etc/fstab.mt6835 --early
+# Sycamore code for SYCAMORE-1242 by zhourh6 at 2024.12.7 end
+	exec /system/bin/e2fsck -v -f -y /dev/block/platform/112b0000.ufshci/by-name/userdata
+	exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/platform/112b0000.ufshci/by-name/userdata
+
+on late-fs && property:vendor.storage.dynamicdata.type=userdata
+# Sycamore code for SYCAMORE-1242 by zhourh6 at 2024.12.7 start
+	mount_all /vendor/etc/fstab.mt6835 --late
+# Sycamore code for SYCAMORE-1242 by zhourh6 at 2024.12.7 end
+
+on fs && property:vendor.storage.dynamicdata.type=dmuserdata
+	exec /system/bin/e2fsck -v -f -y /dev/block/dm-userdata
+	exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/dm-userdata
+# Sycamore code for SYCAMORE-1242 by zhourh6 at 2024.12.7 start
+	mount_all /vendor/etc/fstab.mt6835dm --early
+# Sycamore code for SYCAMORE-1242 by zhourh6 at 2024.12.7 end
+
+on late-fs && property:vendor.storage.dynamicdata.type=dmuserdata
+# Sycamore code for SYCAMORE-1242 by zhourh6 at 2024.12.7 start
+	mount_all /vendor/etc/fstab.mt6835dm --late
+# Sycamore code for SYCAMORE-1242 by zhourh6 at 2024.12.7 end
+
+on post-fs-data && property:vendor.storage.dynamicdata.type=dmuserdata
+	mkdir /mnt/lenovobackup
+	restorecon_recursive /mnt/lenovobackup
+	chown system system /mnt/lenovobackup
+	chmod 0771 /mnt/lenovobackup

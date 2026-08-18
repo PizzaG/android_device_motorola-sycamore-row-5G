@@ -1,0 +1,10 @@
+<manifest version="1.0" type="device">
+    <hal format="aidl">
+        <name>vendor.lenovo.hardware.frp</name>
+        <version>1</version>
+        <interface>
+            <name>IFrp</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</manifest>
