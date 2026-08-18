@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+~ Copyright (C) 2016 The Android Open Source Project
+~
+~ Licensed under the Apache License, Version 2.0 (the "License");
+~ you may not use this file except in compliance with the License.
+~ You may obtain a copy of the License at
+~
+~ http://www.apache.org/licenses/LICENSE-2.0
+~
+~ Unless required by applicable law or agreed to in writing, software
+~ distributed under the License is distributed on an "AS IS" BASIS,
+~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~ See the License for the specific language governing permissions and
+~ limitations under the License
+-->
+<!--
+This XML file declares which signature|privileged permissions should be granted to privileged
+applications that come with the platform
+-->
+<permissions>
+    <privapp-permissions package="com.tmobile.echolocate">
+        <permission name="android.permission.BATTERY_STATS"/>
+        <permission name="android.permission.INSTALL_SELF_UPDATES"/> <!-- b/154259683 -->
+        <permission name="android.permission.READ_LOGS"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="diagandroid.app.receiveDetailedApplicationState"/>
+        <permission name="diagandroid.phone.receiveBinaryData"/>
+        <permission name="diagandroid.phone.receiveDetailedCallState"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="com.tmobile.oem.echolocate.system.provider.trafficstats.TrafficStatsContentProvider.READ_TRAFFIC_STATS"/>
+        <permission name="com.tmobile.oem.echolocate.system.provider.trafficstats.TrafficStatsContentProvider.WRITE_TRAFFIC_STATS"/>
+        <permission name="com.tmobile.oem.echolocate.system.provider.networkslicing.NetworkSlicingContentProvider.READ_NETWORK_SLICING"/>
+        <permission name="com.tmobile.oem.echolocate.system.provider.networkslicing.NetworkSlicingContentProvider.WRITE_NETWORK_SLICING"/>
+
+        <!-- PAMD-T-Mobile Diagnostics (Echolocate)-230126-183206.pdf com.tmobile.echolocate Permission list  add start -->
+        <permission name="android.permission.ACCESS_COURSE_LOCATION"/>
+        <permission name="android.permission.ACTIVITY_RECOGNITON"/>
+        <!-- PAMD-T-Mobile Diagnostics (Echolocate)-230126-183206.pdf com.tmobile.echolocate Permission list  add end -->
+
+        <!-- PAMD-T-Mobile Diagnostics (Echolocate)-230126-183206.pdf Allow-List start -->
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.CONNECTIVITY_INTERNAL"/>
+        <permission name="android.permission.PACKAGE_VERIFICATION_AGENT"/>
+        <permission name="android.permission.READ_NETWORK_USAGE_HISTORY"/>
+        <permission name="android.permission.WRITE_SETTINGS"/>
+        <permission name="diagandroid.data.receivePDPContextState"/>
+        <!-- PAMD-T-Mobile Diagnostics (Echolocate)-230126-183206.pdf Allow-List end -->
+
+        <!-- T-Mobile_Diagnostics_Integration_Document_v5.0.5.pdf  Allow-List start -->
+        <!-- Read Phone state -->
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.SHUTDOWN"/>
+        <!-- Conversations Permissions -->
+        <permission name="com.tmobile.oem.echolocate.system.provider.messagestats.ConversationsContentProvider.READ_MMS_SMS_CONVERSATIONS"/>
+        <permission name="com.tmobile.oem.echolocate.system.provider.messagestats.ConversationsContentProvider.WRITE_MMS_SMS_CONVERSATIONS"/>
+        <!-- PendingMessages Permissions -->
+        <permission name="com.tmobile.oem.echolocate.system.provider.messagestats.PendingMessagesContentProvider.READ_MMS_SMS_PENDING"/>
+        <permission name="com.tmobile.oem.echolocate.system.provider.messagestats.PendingMessagesContentProvider.WRITE_MMS_SMS_PENDING"/>
+        <!-- Radio Permissions -->
+        <permission name="com.tmobile.oem.echolocate.system.provider.backgroundstats.RadioContentProvider.READ_RADIO_STATS"/>
+        <permission name="com.tmobile.oem.echolocate.system.provider.backgroundstats.RadioContentProvider.WRITE_RADIO_STATS"/>
+        <!-- Ims Permissions -->
+        <permission name="com.tmobile.oem.echolocate.system.provider.backgroundstats.ImsContentProvider.READ_IMS_STATS"/>
+        <permission name="com.tmobile.oem.echolocate.system.provider.backgroundstats.ImsContentProvider.WRITE_IMS_STATS"/>
+        <!-- Service State Event Permission -->
+        <permission name="diagandroid.phone.receiveSatModeData"/>
+        <!-- T-Mobile_Diagnostics_Integration_Document_v5.0.5.pdf  Allow-List start -->
+        <deny-permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    </privapp-permissions>
+</permissions>

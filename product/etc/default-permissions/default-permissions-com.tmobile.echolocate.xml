@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Permissions whitelisted via the buganizer b/133335649 -->
+<exceptions>
+    <exception package="com.tmobile.echolocate">
+        <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+        <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    </exception>
+</exceptions>

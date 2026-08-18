@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<exceptions>
+    <exception package="com.tmobile.dm.cm">
+        <!-- android.permission.group.PHONE b/187033682 -->
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <!-- android.permission-group.NOTIFICATIONS b/240674461-->
+        <permission name="android.permission.POST_NOTIFICATIONS"/>
+    </exception>
+</exceptions>

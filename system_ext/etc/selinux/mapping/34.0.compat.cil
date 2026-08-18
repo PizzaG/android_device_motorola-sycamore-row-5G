@@ -1,0 +1,13 @@
+;; complement CIL file for compatibility between ToT policy and 34.0 vendors.
+;; will be compiled along with other normal policy files, on 34.0 vendors.
+;;;; complement CIL file for compatibility between ToT policy and 34.0 vendors.
+;; will be compiled along with other normal policy files, on 34.0 vendors.
+;;;; complement CIL file for compatibility between ToT policy and 34.0 vendors.
+;; will be compiled along with other normal policy files, on 34.0 vendors.
+;;
+
+;; This type may or may not already exist in vendor policy. The 202404 sepolicy
+;; (well, the 24Q1 release) added hidraw_device, but existing vendor policy
+;; may still label the relevant devices with the old label.
+;;
+

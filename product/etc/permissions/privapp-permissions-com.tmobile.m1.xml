@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<permissions>
+    <privapp-permissions package="com.tmobile.m1">
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <deny-permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    </privapp-permissions>
+</permissions>

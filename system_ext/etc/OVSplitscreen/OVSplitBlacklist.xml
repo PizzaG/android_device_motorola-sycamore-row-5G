@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Copyright (C) 2021 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!--
+    This file is used to define the OneVision BlackList permission.
+
+    Reference "android.os.OVSplitBlackList"
+
+    public static final String BLACKLIST_2SPLIT_PERM = "2SplitNotAllow";
+    public static final String BLACKLIST_4SPLIT_PERM = "4SplitNotAllow";
+    public static final String BLACKLIST_FREEFORM_PERM = "FreeformNotAllow";
+    public static final String BLACKLIST_ALL_PERM = "AllNotAllow";
+
+-->
+
+<omblacklist version="1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <packages>
+        <!-- INCEPTION-5047: 乐语音 -->
+        <item pkgname="com.lenovo.menu_assistant" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-5252: 王者荣耀 -->
+        <item pkgname="com.tencent.tmgp.sgame" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-21148: pubg mobile -->
+        <item pkgname="com.tencent.ig" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-5412: 崩坏3 -->
+        <item pkgname="com.miHoYo.bh3.lenovo" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-5454: 穿越火线 -->
+        <item pkgname="com.tencent.tmgp.cf" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-5454: QQ飞车 -->
+        <item pkgname="com.tencent.tmgp.speedmobile" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-7023: 开心消消乐 -->
+        <item pkgname="com.happyelements.AndroidAnimal" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-8731: JingDong jinrong app -->
+        <item pkgname="com.jd.jrapp" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-8587: netease cloud music -->
+        <item pkgname="com.netease.cloudmusic" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-8668: BankAbc -->
+        <item pkgname="com.android.bankabc" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-9399: 哔哩哔哩HD -->
+        <item pkgname="tv.danmaku.bilibilihd" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-9349/INCEPTION-10010/INCEPTION-12120: settings -->
+        <item pkgname="com.android.settings" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-8881: 电量壁纸 -->
+        <item pkgname="com.zui.wallpapersetting" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-12033: 元气骑士 -->
+        <item pkgname="yuanqiqishi.game.lenovo" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-11111: craftsman -->
+        <item pkgname="com.craftsman.go" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-9895: Toca Kitchen 2 -->
+        <item pkgname="com.tocaboca.tocakitchen2" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-12065: 咪咕快游 -->
+        <item pkgname="com.migu.miguplay" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-12484: 羊了个羊 -->
+        <item pkgname="com.sheepsheep.casual.user" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-12361: 钢琴3 -->
+        <item pkgname="com.weixunjie.bxcls.gqk3bcbk.lenovo" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-14424: SketchBook -->
+        <item pkgname="com.pick.sketchbook" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-12278: 233乐园 -->
+        <item pkgname="com.meta.box" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-12551: orders -->
+        <item pkgname="com.uber.restaurants" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-12741: PK XD -->
+        <item pkgname="com.movile.playkids.pkxd" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-14517: ABC Reading -->
+        <item pkgname="com.tal.abctimelibrary" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-15269: 羊了个羊 -->
+        <item pkgname="tile.master.connect.matching.game.ylgy.gzgw5c" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-15170: Red Ball4 -->
+        <item pkgname="com.FDGEntertainment.redball4.gp" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-15121: piano Fire -->
+        <item pkgname="beatmaker.edm.musicgames.PianoGames" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-15056: taptap -->
+        <item pkgname="com.taptap" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-15442: 学而思网校 -->
+        <item pkgname="com.xueersi.parentsmeeting" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-12105/INCEPTION-12074: 不咕剪辑 -->
+        <item pkgname="com.versa.vanilla" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-17707/INCEPTION-17709: TFT云顶之弈 -->
+        <item pkgname="com.riotgames.league.teamfighttactics" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-19862/INCEPTION-19864/INCEPTION-19867: 不咕剪辑 -->
+        <item pkgname="com.versa.magicut" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-19686: 应用宝 -->
+        <item pkgname="com.tencent.android.qqdownloader" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-17637: 在线主题 -->
+        <item pkgname="com.zui.theme.settings" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-16079:  DAKA Camera-->
+        <item pkgname="watermark.timestamp.camera" permission="2SplitNotAllow"/>
+        <!-- LGSIT-4177:  TabletVantage-->
+        <item pkgname="com.tblenovo.center" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-24980:  爱奇艺Pad-->
+        <item pkgname="com.qiyi.video.pad" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-22405:  melody-->
+        <item pkgname="com.melody.app.store" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-12886:  安全中心-->
+        <item pkgname="com.zui.safecenter" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-12174:  快对-->
+        <item pkgname="com.kuaiduizuoye.scan" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-24938/INCEPTION-22396:  建行-->
+        <item pkgname="com.chinamworld.main" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-27092:  企业微信-->
+        <item pkgname="com.tencent.wework" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-27120:  饿了么-->
+        <item pkgname="me.ele" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-9766:  天猫-->
+        <item pkgname="com.tmall.wireless" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-28047:  咪咕游戏 lenovo版本 -->
+        <item pkgname="com.migu.miguplay.lenovo" permission="2SplitNotAllow"/>
+        <!-- LGSIT-9991:  设置 -->
+        <item pkgname="com.android.settings.intelligence" permission="2SplitNotAllow"/>
+        <!-- LGSIT-10669:  magic cleaner -->
+        <item pkgname="com.boostcleaner.best.cleaner" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-22416:  playit -->
+        <item pkgname="com.playit.videoplayer" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-28252 / LGSIT-9660:   虚拟触控 -->
+        <item pkgname="com.zui.wifip2p" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-26850 :   PowerAutomate -->
+        <item pkgname="com.microsoft.flow" permission="2SplitNotAllow"/>
+        <!-- DEPLOYT-2307 :   壁纸 -->
+        <item pkgname="com.tblenovo.wallpaper" permission="2SplitNotAllow"/>
+        <!-- LGSIT-12735 :   三国杀OL -->
+        <item pkgname="com.gameabc.sgspad" permission="2SplitNotAllow"/>
+        <!-- DEPLOYT-5898 :  Block Crazy robo world -->
+        <item pkgname="com.crazy.block.robo.monster.cliffs.craft" permission="2SplitNotAllow"/>
+        <!-- INCEPTION-31840 :   个性定制字体应用 -->
+        <item pkgname="com.zui.homesettings" permission="2SplitNotAllow"/>
+        <!-- HALOZUIT-829 : sidebar -->
+        <item pkgname="com.zui.freeform.sidebar" permission="2SplitNotAllow"/>
+        <!-- DEPLOYT-7711 :   freestyle -->
+        <item pkgname="com.lenovo.hec.lenovoextend" permission="2SplitNotAllow"/>
+        <!-- DEPLOYT-8124 :   快应用 -->
+        <item pkgname="com.lenovo.hyperengine" permission="2SplitNotAllow"/>
+        <!-- DEPLOYT-9976 :   洪恩思维 -->
+        <item pkgname="com.ihuman.imath" permission="2SplitNotAllow"/>
+        <!-- DEPLOYT-9725 :   剪映 -->
+        <item pkgname="com.lemon.lv" permission="2SplitNotAllow"/>
+        <!-- LGSIT-17169 :   息屏样式 -->
+        <item pkgname="com.android.systemui" permission="2SplitNotAllow"/>
+        <!-- HALOZUIT-1227 :   大智慧 -->
+        <item pkgname="com.android.dazhihui" permission="2SplitNotAllow"/>
+        <!-- DEPLOYT-11338 :   融e购 -->
+        <item pkgname="com.icbc.emallmobile" permission="2SplitNotAllow"/>
+        <!-- DEPLOYT-11410 :   梦幻水族箱 -->
+        <item pkgname="com.playrix.fishdomdd.gplay" permission="2SplitNotAllow"/>
+        <!-- DEPLOYT-11488 :   梦幻互通版 -->
+        <item pkgname="com.netease.mhxyhtb" permission="2SplitNotAllow"/>
+        <!-- DEPLOYT-11793 :   Solitaire Fish World-OceanTrip -->
+        <item pkgname="com.casualgame.soliatire" permission="2SplitNotAllow"/>
+        <!-- DEPLOYT-13537 :   扫描二维码 -->
+        <item pkgname="com.zui.camera.qr" permission="2SplitNotAllow"/>
+        <!-- LGSIU-11814 :   Garena Free Fire - Rampage -->
+        <item pkgname="com.dts.freefireth" permission="2SplitNotAllow"/>
+        <!-- LGSIU-9988 :   com.zui.game.service -->
+        <item pkgname="com.zui.game.service" permission="2SplitNotAllow"/>
+        <!-- INCEPU-2732 :   潮汐 -->
+        <item pkgname="io.moreless.tide" permission="2SplitNotAllow"/>
+        <!-- LGSIU-14002 : packageinstaller -->
+        <item pkgname="com.google.android.packageinstaller" permission="2SplitNotAllow"/>
+        <!-- DEPLOYU-3133/DEPLOYU-2693 : 概念画板 -->
+        <item pkgname="com.tophatch.concepts.china" permission="2SplitNotAllow"/>
+        <!-- INCEPU-3101 : 天骄学堂家长 -->
+        <item pkgname="com.lenovo.lfh.tianjiao" permission="2SplitNotAllow"/>
+        <!-- DEPLOYU-3385 : 联想换机 -->
+        <item pkgname="com.zui.clone" permission="2SplitNotAllow"/>
+        <!-- DEPLOYU-3833 : 欧拉数理化 -->
+        <item pkgname="com.ola100.app" permission="2SplitNotAllow"/>
+        <!-- DEPLOYU-4196 : 浦发银行 -->
+        <item pkgname="cn.com.spdb.mobilebank.per" permission="2SplitNotAllow"/>
+        <!--  LGSIU-16451 : 喜马拉雅 -->
+        <item pkgname="com.ximalaya.ting.android" permission="2SplitNotAllow"/>
+        <!--  LGSIU-17780 : Geometry Dash Lite -->
+        <item pkgname="com.robtopx.geometryjumplite" permission="2SplitNotAllow"/>
+        <!--  DEPLOYU-7206 : SIM卡工具包 -->
+        <item pkgname="com.android.stk" permission="2SplitNotAllow"/>
+        <!--  DEPLOYU-7546 : Amaon Music -->
+        <item pkgname="com.amazon.music.tv" permission="2SplitNotAllow"/>
+        <!--  KIRBYU-4139 : 负一屏 -->
+        <item pkgname="com.zui.launchersdk" permission="2SplitNotAllow"/>
+        <!--  [JLAPIS-6179][JLAPIS-6310][KIRBYU-6611] : googleassistant -->
+        <item pkgname="com.google.android.apps.googleassistant" permission="2SplitNotAllow"/>
+        <!--  KIRBYU-6545 : 数字健康 -->
+        <item pkgname="com.google.android.apps.wellbeing" permission="2SplitNotAllow" />
+        <!--  JLAPIS-6222 :  照片桌面 -->
+        <item pkgname="com.android.dreams.phototable" permission="2SplitNotAllow" />
+        <!--  JLAPIS-5519 :   相册剪裁 -->
+        <item pkgname="com.zui.wallpapercropper" permission="2SplitNotAllow" />
+        <!--   LGSIU-19649 : app center  -->
+        <item pkgname="com.lenovo.leos.appstore" permission="2SplitNotAllow" />
+        <!--   LGSIU-19649 : lecloud  -->
+        <item pkgname="com.lenovo.leos.cloud.sync" permission="2SplitNotAllow" />
+        <!--   KIRBYU-14005 : 小游戏  -->
+        <item pkgname="com.lenovo.minigamelauncher" permission="2SplitNotAllow" />
+        <!--   LGSIV-6150 : Launcher  -->
+        <item pkgname="com.zui.launcher" permission="2SplitNotAllow" />
+        <!--   DEPLOYV-2149 : StandbyMode  -->
+        <item pkgname="com.lenovo.screensaver" permission="2SplitNotAllow" />
+        <!--   DEPLOYV-3191 : StandbyMode  -->
+        <item pkgname="com.rsupport.mvagent" permission="2SplitNotAllow" />
+        <!-- [LGSIV-12668]: 想帮帮 -->
+        <item pkgname="com.lenovo.xbb" permission="2SplitNotAllow" />
+        <!--   Sycamore-V code for SYCAMORE-8174 by zhangsb13 at 2025/1/15  -->
+        <item pkgname="com.google.android.apps.googleassistant" permission="2SplitNotAllow" />
+        <!-- <item pkgname="com.google.android.googlequicksearchbox" permission="2SplitNotAllow" /> -->
+        <!--   Sycamore-V code for SYCAMORE-8174 by zhangsb13 at 2025/1/15  -->
+        <!--   DEPLOYV-5879 : 天骄学堂apk  -->
+        <item pkgname="com.lenovo.lfh.tianjiao.tablet" permission="2SplitNotAllow" />
+        <!--   Sycamore-V code for SYCAMORE-6097 by liqi38 at 2025/3/27  -->
+        <item pkgname="com.facebook.orca" permission="2SplitNotAllow" />
+        <!--   Sycamore-V code for SYCAMORE-6097 by liqi38 at 2025/3/27  -->
+    </packages>
+</omblacklist>

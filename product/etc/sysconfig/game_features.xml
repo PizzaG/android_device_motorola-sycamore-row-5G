@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <!-- game integration to enable Playstore update -->
+    <!-- Use this if game Features APK is preloaded -->
+    <feature name="android.software.game_service" />
+    <feature name="com.google.android.feature.GMS_GAME_SERVICE" />
+</config>

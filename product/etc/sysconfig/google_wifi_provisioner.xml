@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <!-- Allowlist so headless app JobService can work. b/135126855 -->
+  <!-- Allow CarrierWifi WifiScorerService to run in background. b/334906519 -->
+  <allow-in-power-save package="com.google.android.apps.carrier.carrierwifi" />
+</config>

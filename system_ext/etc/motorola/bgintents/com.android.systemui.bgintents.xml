@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <!-- allow background start -->
+    <allow-bg-intents package= "com.android.systemui"/>
+    <!-- hide notify for frontground -->
+    <hide-fg-notify package = "com.android.systemui"/>
+</config>

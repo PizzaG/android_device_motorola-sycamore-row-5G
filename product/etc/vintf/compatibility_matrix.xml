@@ -1,0 +1,14 @@
+<!--
+    Input:
+        vendor/dolby/ds/service/hidl/dms/2.0/default/dax_framework_compatibility_matrix_hidl.xml
+-->
+<compatibility-matrix version="8.0" type="framework">
+    <hal format="hidl" optional="true">
+        <name>vendor.dolby.hardware.dms</name>
+        <version>2.0</version>
+        <interface>
+            <name>IDms</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>
